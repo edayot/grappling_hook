@@ -1,0 +1,64 @@
+{
+	"description": {
+		"text": "Grappling Hook"
+	},
+	"exclusive_set": "#minecraft:exclusive_set/crossbow",
+	"supported_items": "#minecraft:enchantable/crossbow",
+	"weight": 1,
+	"max_level": 3,
+	"min_cost": {
+		"base": 50,
+		"per_level_above_first": 9
+	},
+	"max_cost": {
+		"base": 50,
+		"per_level_above_first": 9
+	},
+	"anvil_cost": 6,
+	"slots": [
+		"mainhand",
+		"offhand"
+	],
+	"effects": {
+		"minecraft:hit_block": [
+			{
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "grappling_hook:impl/grappling_hook/hit_block"
+				},
+				"requirements": {
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "#minecraft:arrows"
+					}
+				}
+			}
+		],
+		"minecraft:post_attack": [
+			{
+				"enchanted": "attacker",
+				"affected": "victim",
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "grappling_hook:impl/grappling_hook/post_attack"
+				},
+				"requirements": {
+					"condition": "minecraft:entity_properties",
+					"entity": "direct_attacker",
+					"predicate": {
+						"type": "#minecraft:arrows"
+					}
+				}
+			}
+		],
+		"minecraft:projectile_spawned": [
+			{
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "grappling_hook:impl/grappling_hook/projectile_spawned"
+				}
+			}
+		]
+	}
+}
