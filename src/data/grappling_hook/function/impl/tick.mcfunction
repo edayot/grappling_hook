@@ -10,6 +10,9 @@ execute
         scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
         data remove storage grappling_hook:main temp.UUID
         execute on origin run data modify storage grappling_hook:main temp.UUID set from entity @s UUID
+        execute on origin store result score #level grappling_hook.data run data get entity @s Inventory[{Slot:-106b}].components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
+        execute on origin store result score #level grappling_hook.data run data get entity @s SelectedItem.components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
+        scoreboard players operation @s grappling_hook.arrow.power = #level grappling_hook.data
         execute
             positioned ~ ~5 ~
             summon bat

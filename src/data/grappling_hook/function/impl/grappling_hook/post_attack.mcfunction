@@ -3,6 +3,7 @@ execute store result score #ay grappling_hook.data run data get entity @s Pos[1]
 execute store result score #az grappling_hook.data run data get entity @s Pos[2] 100
 
 
+scoreboard players operation #power grappling_hook.data = @s grappling_hook.arrow.power
 
 execute 
     on origin 

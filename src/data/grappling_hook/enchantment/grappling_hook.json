@@ -5,7 +5,7 @@
 	"exclusive_set": "#minecraft:exclusive_set/crossbow",
 	"supported_items": "#minecraft:enchantable/crossbow",
 	"weight": 1,
-	"max_level": 3,
+	"max_level": 200,
 	"min_cost": {
 		"base": 50,
 		"per_level_above_first": 9
