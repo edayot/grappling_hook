@@ -36,8 +36,8 @@ def beet_default(ctx: Context):
     ctx.require(all_roman)
     export_translated_string(ctx, ("grappling_hook.enchantement.description", {Lang.en_us: "Power :", Lang.fr_fr: "Puissance :"}))
     export_translated_string(ctx, (f"{NAMESPACE}.guide.first_page", {
-        Lang.en_us: "This guide will show you how to craft a grappling hook.\n\nHere are the 3 variants of grappling hook :\n",
-        Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin.\n\nVoici les 3 variantes de grappin :\n"
+        Lang.en_us: "This guide will show you how to craft a grappling hook.\n\nHere are the 3 variants of grappling hook + the guide :\n",
+        Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin.\n\nVoici les 3 variantes de grappin + le guide :\n"
     }))
     basic_grappling_hook = Item(
         id="basic_grappling_hook",
@@ -60,8 +60,8 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.basic", {
-            Lang.en_us: "The basic grappling hook with 60 uses and a power of 10",
-            Lang.fr_fr: "Le grappin basique avec 60 utilisations et une puissance de 10"
+            Lang.en_us: "The basic grappling hook has 60 uses and 10 power.",
+            Lang.fr_fr: "Le grappin basique a 60 utilisations et une puissance de 10."
         })
     ).export(ctx)
 
@@ -86,8 +86,8 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.normal", {
-            Lang.en_us: "The normal grappling hook with 200 uses and a power of 15",
-            Lang.fr_fr: "Le grappin normal avec 200 utilisations et une puissance de 15"
+            Lang.en_us: "The normal grappling hook has 200 uses and 15 power.",
+            Lang.fr_fr: "Le grappin normal a 200 utilisations et une puissance de 15."
         })
     ).export(ctx)
 
@@ -112,8 +112,25 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.advanced", {
-            Lang.en_us: "The advanced grappling hook with 420 uses and a power of 30",
-            Lang.fr_fr: "Le grappin avancé avec 420 utilisations et une puissance de 30"
+            Lang.en_us: "The advanced grappling hook has 420 uses and 30 power.",
+            Lang.fr_fr: "Le grappin avancé a 420 utilisations et une puissance de 30."
+        })
+    ).export(ctx)
+
+    guide = Item(
+        id="guide",
+        base_item="minecraft:written_book",
+        item_name=(
+            f"{NAMESPACE}.item.guide",
+            {Lang.en_us: "Guide", Lang.fr_fr: "Guide"},
+        ),
+        components_extra={
+            "minecraft:enchantment_glint_override": False,
+            "special:item_modifier": "grappling_hook:impl/guide",
+        },
+        guide_description=(f"{NAMESPACE}.guide.description", {
+            Lang.en_us: "The guide you are currently holding.",
+            Lang.fr_fr: "Le guide que vous tenez actuellement."
         })
     ).export(ctx)
 
@@ -125,6 +142,8 @@ def beet_default(ctx: Context):
     diamond = VanillaItem("minecraft:diamond")
     elytra = VanillaItem("minecraft:elytra")
     obsidian = VanillaItem("minecraft:obsidian")
+    book = VanillaItem("minecraft:book")
+    redstone = VanillaItem("minecraft:redstone")
 
     ShapedRecipe(
         (
@@ -153,5 +172,15 @@ def beet_default(ctx: Context):
             (None, elytra, None),
         ),
         (advanced_grappling_hook, 1),
+        flags=["consume_tools"],
+    ).export(ctx)
+
+    ShapedRecipe(
+        (
+            (book, slime_ball, None),
+            (crossbow, redstone, None),
+            (None, None, None),
+        ),
+        (guide, 1),
         flags=["consume_tools"],
     ).export(ctx)
