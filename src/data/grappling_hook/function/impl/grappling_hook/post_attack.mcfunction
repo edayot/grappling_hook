@@ -5,5 +5,13 @@ execute store result score #az grappling_hook.data run data get entity @s Pos[2]
 
 
 execute 
-    on attacker 
+    on origin 
     run function ./player_motion
+
+
+
+scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
+execute 
+    as @e[type=bat,tag=grappling_hook.bat,distance=..5] 
+    if score @s grappling_hook.id = #temp_id grappling_hook.data
+    run function ./kill

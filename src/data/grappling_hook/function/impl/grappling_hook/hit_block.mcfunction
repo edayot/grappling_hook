@@ -29,7 +29,7 @@ execute
         scoreboard players operation #dz grappling_hook.data *= #power grappling_hook.data
 
         scoreboard players operation #dy grappling_hook.data /= #2 grappling_hook.data
-        execute if score #dy grappling_hook.data matches ..0 run scoreboard players set #dy grappling_hook.data 2000
+        execute if score #dy grappling_hook.data matches ..1000 run scoreboard players set #dy grappling_hook.data 1000
         scoreboard players add #dy grappling_hook.data 8000
 
         scoreboard players operation #abs_dx grappling_hook.data = #dx grappling_hook.data
@@ -58,4 +58,12 @@ execute
         scoreboard players operation $z player_motion.api.launch = #dz grappling_hook.data
         execute at @s run function player_motion:api/launch_xyz
 
+kill @e[limit=1, type=item, distance=..5, nbt={Age: 0s, Item: {id: "minecraft:lead"}}]
+scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
+execute 
+    as @e[type=bat,tag=grappling_hook.bat,distance=..5] 
+    if score @s grappling_hook.id = #temp_id grappling_hook.data
+    run function ./kill:
+        tp ~ -300 ~
+        kill @s
 kill @s
