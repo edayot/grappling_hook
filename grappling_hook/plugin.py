@@ -58,7 +58,11 @@ def beet_default(ctx: Context):
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 60,
             "minecraft:custom_data": "{grappling_hook:1b}"
-        }
+        },
+        guide_description=(f"{NAMESPACE}.guide.basic", {
+            Lang.en_us: "The basic grappling hook with 60 uses and a power of 10",
+            Lang.fr_fr: "Le grappin basique avec 60 utilisations et une puissance de 10"
+        })
     ).export(ctx)
 
     normal_grappling_hook = Item(
@@ -80,7 +84,11 @@ def beet_default(ctx: Context):
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 200,
             "minecraft:custom_data": "{grappling_hook:1b}"
-        }
+        },
+        guide_description=(f"{NAMESPACE}.guide.normal", {
+            Lang.en_us: "The normal grappling hook with 200 uses and a power of 15",
+            Lang.fr_fr: "Le grappin normal avec 200 utilisations et une puissance de 15"
+        })
     ).export(ctx)
 
     advanced_grappling_hook = Item(
@@ -102,7 +110,11 @@ def beet_default(ctx: Context):
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 420,
             "minecraft:custom_data": "{grappling_hook:1b}"
-        }
+        },
+        guide_description=(f"{NAMESPACE}.guide.advanced", {
+            Lang.en_us: "The advanced grappling hook with 420 uses and a power of 30",
+            Lang.fr_fr: "Le grappin avancé avec 420 utilisations et une puissance de 30"
+        })
     ).export(ctx)
 
     crossbow = VanillaItem("minecraft:crossbow")
