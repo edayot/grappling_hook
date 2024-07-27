@@ -1,6 +1,7 @@
 {
 	"description": {
-		"text": "Grappling Hook"
+		"translate": "grappling_hook.enchantement.description",
+		"fallback": "Power :"
 	},
 	"exclusive_set": "#minecraft:exclusive_set/crossbow",
 	"supported_items": "#minecraft:enchantable/crossbow",
