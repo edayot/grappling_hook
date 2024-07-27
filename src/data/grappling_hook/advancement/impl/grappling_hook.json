@@ -1,0 +1,10 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:using_item"
+		}
+	},
+	"rewards": {
+		"function": "grappling_hook:impl/grappling_hook/use"
+	}
+}
