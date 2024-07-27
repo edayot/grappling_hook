@@ -35,6 +35,10 @@ def all_roman(ctx: Context):
 def beet_default(ctx: Context):
     ctx.require(all_roman)
     export_translated_string(ctx, ("grappling_hook.enchantement.description", {Lang.en_us: "Power :", Lang.fr_fr: "Puissance :"}))
+    export_translated_string(ctx, (f"{NAMESPACE}.guide.first_page", {
+        Lang.en_us: "This guide will show you how to craft a grappling hook.\n\nHere are the 3 variants of grappling hook :\n",
+        Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin.\n\nVoici les 3 variantes de grappin :\n"
+    }))
     basic_grappling_hook = Item(
         id="basic_grappling_hook",
         base_item="minecraft:crossbow",
