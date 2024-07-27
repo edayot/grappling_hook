@@ -1,7 +1,14 @@
 {
 	"criteria": {
 		"requirement": {
-			"trigger": "minecraft:using_item"
+			"trigger": "minecraft:using_item",
+			"conditions": {
+				"item": {
+					"predicates": {
+						"minecraft:custom_data": "{grappling_hook:1b}"
+					}
+				}
+			}
 		}
 	},
 	"rewards": {
