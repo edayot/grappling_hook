@@ -7,19 +7,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-beet = ">=0.108.3"
-mecha = ">=0.95.2"
-weld-deps = ">=0.8.0"
-bolt = ">=0.49.1"
-model-resolver = ">=0.10.0"
-simple-item-plugin = ">=0.7.0"
+simple-item-plugin = ">=0.9.1"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^8.7.0"
 
 
 [tool.beet.meta.simple_item_plugin]
-custom_model_data = 1430000
+custom_model_data = 1439000
 generate_guide = false
 
 [tool.beet.meta.model_merging]
