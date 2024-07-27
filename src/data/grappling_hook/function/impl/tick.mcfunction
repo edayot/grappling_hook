@@ -6,7 +6,6 @@ execute
     as @e[tag=grappling_hook.arrow,tag=grappling_hook.arrow.summoned]
     at @s
     run function ~/arrow:
-        tag @s remove grappling_hook.arrow.summoned
         scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
         data remove storage grappling_hook:main temp.UUID
         execute on origin run data modify storage grappling_hook:main temp.UUID set from entity @s UUID
@@ -22,6 +21,23 @@ execute
                 scoreboard players operation @s grappling_hook.id = #temp_id grappling_hook.data
                 data modify entity @s leash.UUID set from storage grappling_hook:main temp.UUID
                 effect give @s invisibility infinite 1 true
+            
+        #kill other arrows from the same player
+        execute
+            on origin
+            run tag @s add grappling_hook.player.me
+        execute
+            as @e[tag=grappling_hook.arrow,tag=!grappling_hook.arrow.summoned]
+            run function ~/kill_arrow:
+                scoreboard players set #to_kill grappling_hook.data 0
+                execute on origin if entity @s[tag=grappling_hook.player.me] run scoreboard players set #to_kill grappling_hook.data 1
+                execute 
+                    if score #to_kill grappling_hook.data matches 1 
+                    run function grappling_hook:impl/grappling_hook/kill
+        execute
+            on origin
+            run tag @s remove grappling_hook.player.me
+        tag @s remove grappling_hook.arrow.summoned
 
 
 execute
