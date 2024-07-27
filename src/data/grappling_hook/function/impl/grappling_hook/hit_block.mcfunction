@@ -1,7 +1,4 @@
 
-scoreboard players set #power grappling_hook.data 15
-
-scoreboard players set #max_abs_speed grappling_hook.data 100000
 
 
 execute store result score #ax grappling_hook.data run data get entity @s Pos[0] 100
@@ -12,7 +9,8 @@ execute store result score #az grappling_hook.data run data get entity @s Pos[2]
 
 execute 
     on origin 
-    run function ~/player_motion:
+    run function ./player_motion:
+    
 
         execute store result score #px grappling_hook.data run data get entity @s Pos[0] 100
         execute store result score #py grappling_hook.data run data get entity @s Pos[1] 100

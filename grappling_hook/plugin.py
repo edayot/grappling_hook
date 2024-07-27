@@ -14,4 +14,13 @@ def beet_default(ctx: Context):
         merge_overrides_policy={
             "layer0": MergeOverridesPolicy.use_model_path
         },
+        components_extra={
+            "minecraft:enchantments": {
+                "levels": {
+                    "grappling_hook:grappling_hook": 1
+                },
+                "show_in_tooltip": False
+            },
+            "minecraft:enchantment_glint_override": False
+        }
     ).export(ctx)
