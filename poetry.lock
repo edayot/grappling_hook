@@ -1032,13 +1032,13 @@ files = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.11.0"
+version = "0.12.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "simple_item_plugin-0.11.0-py3-none-any.whl", hash = "sha256:80abd53981121e6f3f2f77ded9bf2ded1663c345b7210b9eac1dd6740a8c6c4b"},
-    {file = "simple_item_plugin-0.11.0.tar.gz", hash = "sha256:915c2aac5ebab3c7cab1cd38b0b1f621c1e823a7812ef85da160d0f2b5717566"},
+    {file = "simple_item_plugin-0.12.0-py3-none-any.whl", hash = "sha256:accb63bc6e8fdc77ba2aa19c14cc24464ee009dd87d877b300ea11b6b4f2f0f1"},
+    {file = "simple_item_plugin-0.12.0.tar.gz", hash = "sha256:908412844a55c7ed2d1ff4c53e38f4bf6273e609e7dc87dab6438f67b75d6177"},
 ]
 
 [package.dependencies]
