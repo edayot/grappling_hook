@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "template"
+name = "grappling_hook"
 version = "0.1.0"
 description = ""
 authors = ["edayot <pro.e.dayot@gmail.com>"]
@@ -62,7 +62,7 @@ output = "build"
 
 pipeline = [
     "simple_item_plugin",
-    "template",
+    "grappling_hook",
 ]
 require=[
     "bolt",
@@ -90,13 +90,13 @@ minecraft_version = "1.21"
 
 [tool.beet.meta.mecha]
 multiline = true
-match = ["template:**"]
+match = ["grappling_hook:**"]
 
 
 [tool.beet.meta.model_resolver]
 render_size = 256
 load_vanilla = true
-save_namespace = "template"
+save_namespace = "grappling_hook"
 
 
 

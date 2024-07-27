@@ -1,1 +1,0 @@
-tellraw @s {"text":f"[Loaded Template v{ctx.project_version}]","color":"green"}

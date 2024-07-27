@@ -1,0 +1,1 @@
+tellraw @s {"text":f"[Loaded grappling_hook v{ctx.project_version}]","color":"green"}
