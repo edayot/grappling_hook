@@ -1,6 +1,7 @@
 from beet import Context
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item, MergeOverridesPolicy
+from simple_item_plugin.crafting import ShapedRecipe, VanillaItem
 
 
 def beet_default(ctx: Context):
@@ -59,10 +60,14 @@ def beet_default(ctx: Context):
         components_extra={
             "minecraft:enchantments": {
                 "levels": {
-                    "grappling_hook:grappling_hook": 35
+                    "grappling_hook:grappling_hook": 30
                 },
                 "show_in_tooltip": False
             },
             "minecraft:enchantment_glint_override": False
         }
     ).export(ctx)
+
+    elytra = VanillaItem("minecraft:elytra")
+    diamond = VanillaItem("minecraft:diamond")
+
