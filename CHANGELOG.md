@@ -2,6 +2,33 @@
 
 
 
+## v0.4.0 (2024-08-07)
+
+### Chore
+
+* chore: update deps ([`be52732`](https://github.com/edayot/grappling_hook/commit/be52732b8ea5a1f84239d59ffef4e2af9eb14de3))
+
+* chore: update deps ([`db3ec0d`](https://github.com/edayot/grappling_hook/commit/db3ec0dd611d90a9066152fa7901f0446d3903f4))
+
+### Feature
+
+* feat: compatible with other enchantements like mending ([`b9b1814`](https://github.com/edayot/grappling_hook/commit/b9b1814280d55e7e677c13a9dd014692a9b4a01c))
+
+* feat: add heavy workbench craft in the guide ([`3b8f8ec`](https://github.com/edayot/grappling_hook/commit/3b8f8ec8959d734b01772ff29c9efd903ecefe24))
+
+* feat: finishing up ([`2246a4a`](https://github.com/edayot/grappling_hook/commit/2246a4a1aaadf5a48fb720448dd764575eb981e8))
+
+### Fix
+
+* fix: enchantment should&#39;nt be impl ([`4bd3eb2`](https://github.com/edayot/grappling_hook/commit/4bd3eb2f4dbc287ad12082cab34625d82c015a0c))
+
+* fix: disable all enchtements being added to a grappling ([`650f9aa`](https://github.com/edayot/grappling_hook/commit/650f9aae05343528734428fdcd39ef7b872cfaa2))
+
+* fix: background issue ([`d64558e`](https://github.com/edayot/grappling_hook/commit/d64558ee107c3c2f1785457830d15df965f49a0f))
+
+* fix: pack.png ([`252f93c`](https://github.com/edayot/grappling_hook/commit/252f93c4f4926374596bc5eaf733920a82459190))
+
+
 ## v0.3.0 (2024-08-07)
 
 ### Chore
