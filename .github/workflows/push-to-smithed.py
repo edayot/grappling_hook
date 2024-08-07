@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import toml
+from weld_deps.main import DepsConfig, Source
 
 try: 
     SMITHED_TOKEN = os.environ['SMITHED_TOKEN']
@@ -44,12 +45,13 @@ download_url = (
 
 
 
-weld_deps = beet.get("meta", {}).get("weld_deps", {}).get("deps", [])
+weld_deps = beet.get("meta", {}).get("weld_deps", {})
+weld_deps = DepsConfig.model_validate(weld_deps)
 dep = []
-for d in weld_deps:
+for id, version_param in weld_deps.deps_dict():
     dep.append({
-        "id": d["id"],
-        "version": d["version"]
+        "id": id,
+        "version": version_param.version
     })
 
 
