@@ -16,6 +16,7 @@ python-semantic-release = "^8.7.0"
 [tool.beet.meta.simple_item_plugin]
 custom_model_data = 1439000
 generate_guide = true
+render_path_for_pack_png = "grappling_hook:render/grappling_hook/item/basic_grappling_hook"
 
 [tool.beet.meta.model_merging]
 predicate_order = ["custom_model_data", "pulling", "pull", "charged", "firework"]
