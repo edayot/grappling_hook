@@ -20,13 +20,9 @@ generate_guide = true
 [tool.beet.meta.model_merging]
 predicate_order = ["custom_model_data", "pulling", "pull", "charged", "firework"]
 
-[[tool.beet.meta.weld_deps.deps]]
-id = "player_motion"
-version = "1.3.1"
-
-[[tool.beet.meta.weld_deps.deps]]
-id = "smithed.crafter.dev"
-version = "0.4.1"
+[tool.beet.meta.weld_deps.deps]
+"player_motion" = "1.3.1"
+"smithed.crafter.dev" = "0.4.1"
 
 [tool.semantic_release]
 major_on_zero = false
