@@ -1,6 +1,5 @@
 {
     "values": [
-      "#minecraft:non_treasure",
-      "#minecraft:treasure"
+      "#minecraft:non_treasure"
     ]
   }

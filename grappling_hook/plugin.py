@@ -53,7 +53,7 @@ def beet_default(ctx: Context):
         components_extra={
             "minecraft:enchantments": {
                 "levels": {
-                    "grappling_hook:impl/grappling_hook": 10
+                    "grappling_hook:grappling_hook": 10
                 },
             },
             "minecraft:enchantment_glint_override": False,
@@ -79,7 +79,7 @@ def beet_default(ctx: Context):
         components_extra={
             "minecraft:enchantments": {
                 "levels": {
-                    "grappling_hook:impl/grappling_hook": 15
+                    "grappling_hook:grappling_hook": 15
                 },
             },
             "minecraft:enchantment_glint_override": False,
@@ -105,7 +105,7 @@ def beet_default(ctx: Context):
         components_extra={
             "minecraft:enchantments": {
                 "levels": {
-                    "grappling_hook:impl/grappling_hook": 30
+                    "grappling_hook:grappling_hook": 30
                 },
             },
             "minecraft:enchantment_glint_override": False,
