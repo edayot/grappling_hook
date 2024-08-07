@@ -1,0 +1,20 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:crossbow",
+						"predicates": {
+							"minecraft:custom_data": "{grappling_hook:1b}"
+						}
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "grappling_hook:impl/grappling_hook/check_enchantments"
+	}
+}
