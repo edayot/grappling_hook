@@ -2,6 +2,39 @@
 
 
 
+## v0.3.0 (2024-08-07)
+
+### Chore
+
+* chore: update deps ([`634cf89`](https://github.com/edayot/grappling_hook/commit/634cf89395586aab3a2fa1bb9ce61393f38baeeb))
+
+* chore: release script ([`5474926`](https://github.com/edayot/grappling_hook/commit/5474926d8371b8ba15f45413c2b5624ce5aef49b))
+
+### Feature
+
+* feat: enable fast retrieve ([`86f6738`](https://github.com/edayot/grappling_hook/commit/86f67388e6442e92e5573d78b7c7adaa54a311bb))
+
+### Fix
+
+* fix: impl enchantement, restrict advancement, add guide texture ([`da4dcd2`](https://github.com/edayot/grappling_hook/commit/da4dcd23b961424aacaf70431051d68a2971c860))
+
+### Unknown
+
+* new config format ([`1176e32`](https://github.com/edayot/grappling_hook/commit/1176e32e44183c79f2b9e9e7814ebf02264c0ed6))
+
+* chore update deps ([`7bc8375`](https://github.com/edayot/grappling_hook/commit/7bc83752805a36b39511b2df0b5fd3925bbbc455))
+
+* update guide texture ([`8222e1a`](https://github.com/edayot/grappling_hook/commit/8222e1a6cc703f3b2e4658a410a4284c75a2d765))
+
+* update deps ([`79e1127`](https://github.com/edayot/grappling_hook/commit/79e11276582e3ce32e0b507be9b1864fd425054d))
+
+* add the guide ([`38b509c`](https://github.com/edayot/grappling_hook/commit/38b509cef4d60ec6aa8c0b5828680432d871e44e))
+
+* guide description ([`1caa8e1`](https://github.com/edayot/grappling_hook/commit/1caa8e12a9f6df0102a10bb3327ad3eb4b8d0ddb))
+
+* first page ([`119886b`](https://github.com/edayot/grappling_hook/commit/119886b143638078f56050752a0dfb30da444792))
+
+
 ## v0.2.0 (2024-07-27)
 
 
