@@ -1,7 +1,8 @@
 from beet import Context, Language
 from simple_item_plugin.utils import NAMESPACE, Lang, export_translated_string
 from simple_item_plugin.item import Item, MergeOverridesPolicy
-from simple_item_plugin.crafting import ShapedRecipe, VanillaItem
+from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
+import json
 
 
 def roman(num: int) -> str:
@@ -36,8 +37,8 @@ def beet_default(ctx: Context):
     ctx.require(all_roman)
     export_translated_string(ctx, ("grappling_hook.enchantement.description", {Lang.en_us: "Power :", Lang.fr_fr: "Puissance :"}))
     export_translated_string(ctx, (f"{NAMESPACE}.guide.first_page", {
-        Lang.en_us: "This guide will show you how to craft a grappling hook (they are used like a crossbow).\n\nHere are the 3 variants of grappling hook + the guide :\n",
-        Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin (ils sont utilisés comme des arbalètes).\n\nVoici les 3 variantes de grappin + le guide :\n"
+        Lang.en_us: "This guide will show you how to craft a grappling hook (they are used like a crossbow).\n\nHere are all the crafts of the datapack :\n",
+        Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin (ils sont utilisés comme des arbalètes).\n\nVoici tout les crafts du datapack :\n"
     }))
     basic_grappling_hook = Item(
         id="basic_grappling_hook",
@@ -144,6 +145,32 @@ def beet_default(ctx: Context):
     obsidian = VanillaItem("minecraft:obsidian")
     book = VanillaItem("minecraft:book")
     redstone = VanillaItem("minecraft:redstone")
+    oak_log = VanillaItem("minecraft:oak_log")
+    crafting_table = VanillaItem("minecraft:crafting_table")
+    smooth_stone = VanillaItem("minecraft:smooth_stone")
+    heavy_workbench = ExternalItem(
+        id="smithed:crafter",
+        loot_table_path="smithed.crafter:blocks/table",
+        model_path="smithed.crafter:block/table",
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"block.smithed.crafter"})
+            }
+        }, 
+        guide_description=(f"{NAMESPACE}.guide.heavy_workbench", {
+            Lang.fr_fr: "C'est une table de craft qui permet de crafter les items de Grappling Hook.",
+            Lang.en_us: "It's a crafting table that allows you to craft Grappling Hook items."
+        })
+    )
+    ShapedRecipe(
+        (
+            (oak_log, oak_log, oak_log),
+            (oak_log, crafting_table, oak_log),
+            (smooth_stone, smooth_stone, smooth_stone),
+        ),
+        (heavy_workbench, 1),
+    ).export(ctx, True)
 
     ShapedRecipe(
         (
