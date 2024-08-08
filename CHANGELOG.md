@@ -2,6 +2,33 @@
 
 
 
+## v0.5.0 (2024-08-08)
+
+### Chore
+
+* chore: modrinth support ([`dd15542`](https://github.com/edayot/grappling_hook/commit/dd155422a016c7de8b70679633cc2911f33025de))
+
+### Documentation
+
+* docs: add license ([`cef430e`](https://github.com/edayot/grappling_hook/commit/cef430e3c3aa408b03f63366118646ad17bcfe09))
+
+### Feature
+
+* feat: add demo video ([`7c4bb4b`](https://github.com/edayot/grappling_hook/commit/7c4bb4be956ad46f4e973245504e4696855740a2))
+
+### Fix
+
+* fix: looping ([`415e31a`](https://github.com/edayot/grappling_hook/commit/415e31abfa7be46a01cfe823046683fe490369b0))
+
+### Unknown
+
+* Update README.md ([`a74dc48`](https://github.com/edayot/grappling_hook/commit/a74dc48eca80f0adc7cbca4bcd31332b9b690629))
+
+* Update README.md ([`bede9d5`](https://github.com/edayot/grappling_hook/commit/bede9d55ca9352d4e6b912d5b9540526c96558dc))
+
+* dsq ([`143becc`](https://github.com/edayot/grappling_hook/commit/143becc7744a94f5066ad69c019e40af810670df))
+
+
 ## v0.4.0 (2024-08-07)
 
 ### Chore
