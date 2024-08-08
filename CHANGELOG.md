@@ -2,6 +2,13 @@
 
 
 
+## v0.5.2 (2024-08-08)
+
+### Unknown
+
+* commit ([`2159d3e`](https://github.com/edayot/grappling_hook/commit/2159d3e9e151b5c836bd29573e397be2247499c0))
+
+
 ## v0.5.1 (2024-08-08)
 
 ### Unknown
