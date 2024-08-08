@@ -13,6 +13,12 @@ simple-item-plugin = ">=0.9.1"
 python-semantic-release = "^8.7.0"
 
 
+[tool.beet.meta]
+mc_supports = ["1.21"]
+minecraft_version = "1.21"
+modrinth_id = "grappling_hook"
+
+
 [tool.beet.meta.simple_item_plugin]
 custom_model_data = 1439000
 generate_guide = true
@@ -79,10 +85,6 @@ pack_format = 48
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
 
-[tool.beet.meta]
-mc_supports = ["1.21"]
-minecraft_version = "1.21"
-modrinth_id = "grappling-hook"
 
 [tool.beet.meta.mecha]
 multiline = true
