@@ -16,7 +16,7 @@ python-semantic-release = "^8.7.0"
 [tool.beet.meta]
 mc_supports = ["1.21"]
 minecraft_version = "1.21"
-modrinth_id = "grappling_hook"
+modrinth_id = "bpmXxZTt"
 
 
 [tool.beet.meta.simple_item_plugin]
