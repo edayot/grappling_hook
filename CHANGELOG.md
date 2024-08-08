@@ -2,6 +2,15 @@
 
 
 
+## v0.5.1 (2024-08-08)
+
+### Unknown
+
+* reorder ([`c8fc198`](https://github.com/edayot/grappling_hook/commit/c8fc198aa61933c2096e5cef4aa782e532a2ad7f))
+
+* fd ([`96e426b`](https://github.com/edayot/grappling_hook/commit/96e426bfee29fad3bc2057c4596f38e514b73884))
+
+
 ## v0.5.0 (2024-08-08)
 
 ### Chore
