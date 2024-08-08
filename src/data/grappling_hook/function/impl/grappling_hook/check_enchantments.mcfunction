@@ -45,5 +45,5 @@ function ~/loop:
                 $item modify entity @s container.$(Slot) grappling_hook:impl/add_glint
             execute if score #slot grappling_hook.data matches -106 run item modify entity @s weapon.offhand grappling_hook:impl/add_glint
 
-    # data remove storage grappling_hook:main temp.RealInventory[0]
-    # execute if data storage grappling_hook:main temp.RealInventory[0] run function ~/
+    data remove storage grappling_hook:main temp.RealInventory[0]
+    execute if data storage grappling_hook:main temp.RealInventory[0] run function ~/
