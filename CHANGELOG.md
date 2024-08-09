@@ -2,6 +2,13 @@
 
 
 
+## v0.6.0 (2024-08-09)
+
+### Fix
+
+* fix: change text ([`a7d89a6`](https://github.com/edayot/grappling_hook/commit/a7d89a6763c70d27efa46b03d77108692b06f74f))
+
+
 ## v0.5.2 (2024-08-08)
 
 ### Unknown
