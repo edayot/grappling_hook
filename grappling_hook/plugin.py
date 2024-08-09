@@ -61,8 +61,8 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.basic", {
-            Lang.en_us: "The basic grappling hook has 60 uses and 10 power.",
-            Lang.fr_fr: "Le grappin basique a 60 utilisations et une puissance de 10."
+            Lang.en_us: "Has 60 uses and 10 of power.",
+            Lang.fr_fr: "Il a 60 utilisations et une puissance de 10."
         })
     ).export(ctx)
 
@@ -87,8 +87,8 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.normal", {
-            Lang.en_us: "The normal grappling hook has 200 uses and 15 power.",
-            Lang.fr_fr: "Le grappin normal a 200 utilisations et une puissance de 15."
+            Lang.en_us: "Has 200 uses and 15 of power.",
+            Lang.fr_fr: "Il a 200 utilisations et une puissance de 15."
         })
     ).export(ctx)
 
@@ -113,8 +113,8 @@ def beet_default(ctx: Context):
             "minecraft:custom_data": "{grappling_hook:1b}"
         },
         guide_description=(f"{NAMESPACE}.guide.advanced", {
-            Lang.en_us: "The advanced grappling hook has 420 uses and 30 power.",
-            Lang.fr_fr: "Le grappin avancé a 420 utilisations et une puissance de 30."
+            Lang.en_us: "Has 420 uses and 30 of power.",
+            Lang.fr_fr: "Il a 420 utilisations et une puissance de 30."
         })
     ).export(ctx)
 
