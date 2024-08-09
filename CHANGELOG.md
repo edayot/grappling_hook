@@ -2,6 +2,13 @@
 
 
 
+## v1.0.0 (2024-08-09)
+
+### Documentation
+
+* docs: update readme ([`8fdb4dc`](https://github.com/edayot/grappling_hook/commit/8fdb4dc5a373f6a562b275308eecc8658440f42d))
+
+
 ## v0.6.0 (2024-08-09)
 
 ### Fix
