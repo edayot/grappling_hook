@@ -25,3 +25,8 @@ There is also a ![Guide](https://github.com/edayot/grappling_hook/blob/master/sr
 ## In action :
 
 https://github.com/user-attachments/assets/0ed305d5-fbd6-463b-8270-164f76940fde
+
+
+## Credits
+
+Player Motion : https://smithed.net/packs/player_motion
