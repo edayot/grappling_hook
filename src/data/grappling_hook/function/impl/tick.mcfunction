@@ -8,6 +8,7 @@ execute
     run function ~/arrow:
         scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
         data remove storage grappling_hook:main temp.UUID
+        data modify entity @s damage set value 0.01
 
         execute
             on origin
