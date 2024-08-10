@@ -41,7 +41,7 @@ execute
                 execute on origin if entity @s[tag=grappling_hook.player.me] run scoreboard players set #to_kill grappling_hook.data 1
                 execute 
                     if score #to_kill grappling_hook.data matches 1 
-                    run function grappling_hook:impl/grappling_hook/kill
+                    run kill @s
         execute
             on origin
             run tag @s remove grappling_hook.player.me
