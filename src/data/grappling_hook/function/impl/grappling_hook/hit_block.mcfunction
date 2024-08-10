@@ -11,7 +11,8 @@ scoreboard players operation #power grappling_hook.data = @s grappling_hook.arro
 execute 
     on origin 
     if entity @s[distance=..200]
-    run function ./player_motion:    
+    run function ./player_motion:   
+        execute if entity @s[type=minecraft:player,nbt={FallFlying:1b}] run return fail
 
         execute store result score #px grappling_hook.data run data get entity @s Pos[0] 100
         execute store result score #py grappling_hook.data run data get entity @s Pos[1] 100
