@@ -58,14 +58,13 @@ execute
         scoreboard players operation $x player_motion.api.launch = #dx grappling_hook.data
         scoreboard players operation $y player_motion.api.launch = #dy grappling_hook.data
         scoreboard players operation $z player_motion.api.launch = #dz grappling_hook.data
-        execute at @s run function player_motion:api/launch_xyz
+        execute if entity @s[type=player] at @s run function player_motion:api/launch_xyz
+        execute 
+            unless entity @s[type=player] at @s run function ./merge_motion:
+                data modify storage grappling_hook:main temp.Motion set value [0.0d,0.0d,0.0d]
+                execute store result storage grappling_hook:main temp.Motion[0] double 0.0001 run scoreboard players get #dx grappling_hook.data
+                execute store result storage grappling_hook:main temp.Motion[1] double 0.0001 run scoreboard players get #dy grappling_hook.data
+                execute store result storage grappling_hook:main temp.Motion[2] double 0.0001 run scoreboard players get #dz grappling_hook.data
+                data modify entity @s Motion set from storage grappling_hook:main temp.Motion
 
-kill @e[limit=1, type=item, distance=..5, nbt={Age: 0s, Item: {id: "minecraft:lead"}}]
-scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
-execute 
-    as @e[type=bat,tag=grappling_hook.bat,distance=..5] 
-    if score @s grappling_hook.id = #temp_id grappling_hook.data
-    run function ./kill:
-        tp ~ -300 ~
-        kill @s
 kill @s

@@ -39,6 +39,21 @@
 		"minecraft:post_attack": [
 			{
 				"enchanted": "attacker",
+				"affected": "victim",
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "grappling_hook:impl/grappling_hook/add_victim_tag"
+				},
+				"requirements": {
+					"condition": "minecraft:entity_properties",
+					"entity": "direct_attacker",
+					"predicate": {
+						"type": "#minecraft:arrows"
+					}
+				}
+			},
+			{
+				"enchanted": "attacker",
 				"affected": "damaging_entity",
 				"effect": {
 					"type": "minecraft:run_function",
