@@ -8,5 +8,7 @@ execute
             as @e[type=arrow,tag=grappling_hook.arrow]
             if score @s grappling_hook.id = #temp_id grappling_hook.data
             at @s
-            run function ./hit_block
+            run function ./check_power:
+                execute if score @s grappling_hook.arrow.power matches 30.. run function ./hit_block
+                execute unless score @s grappling_hook.arrow.power matches 30.. run function ./kill
 
