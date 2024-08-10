@@ -45,3 +45,8 @@ execute
             run tag @s remove grappling_hook.player.me
         tag @s remove grappling_hook.arrow.summoned
 
+
+scoreboard players add @e[tag=grappling_hook.arrow] grappling_hook.data 1
+time_to_kill_in_second = 10
+time_to_kill = time_to_kill_in_second * 20
+raw f'kill @e[tag=grappling_hook.arrow,scores={{grappling_hook.data={time_to_kill}..}}]'
