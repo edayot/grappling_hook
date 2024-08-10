@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "grappling_hook"
-version = "1.0.0"
+version = "1.1.0"
 description = ""
 authors = ["edayot <pro.e.dayot@gmail.com>"]
 readme = "README.md"

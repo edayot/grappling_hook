@@ -2,6 +2,43 @@
 
 
 
+## v1.1.0 (2024-08-10)
+
+### Chore
+
+* chore: fix artifact command order ([`e92b734`](https://github.com/edayot/grappling_hook/commit/e92b734ed8ca8469799fac6036edddbcb44cbe0d))
+
+* chore: update deps ([`a4a1707`](https://github.com/edayot/grappling_hook/commit/a4a1707fcf03a6f004a694a160df433eb55e05e2))
+
+### Feature
+
+* feat: delete leash visual effect + victim are atracted by attacker ([`4a292e8`](https://github.com/edayot/grappling_hook/commit/4a292e8c160b3cfebad7058fe8757a4d09897f3d))
+
+* feat: restrict the midair use to the advanced grappling ([`288fdd1`](https://github.com/edayot/grappling_hook/commit/288fdd153c2b23516b7a084ef6f107015507f680))
+
+### Fix
+
+* fix: limit the max_speed for low power ([`b54fe29`](https://github.com/edayot/grappling_hook/commit/b54fe293bb64b1b0c5e463bfabaf9ff7f4df6428))
+
+* fix: grappling hook + elytra is too OP ([`34ef9fe`](https://github.com/edayot/grappling_hook/commit/34ef9feddf0ef6c6b70b2b05320a370bd2e50255))
+
+* fix: after 10 seconds arrows are killed #1 ([`fdc85b3`](https://github.com/edayot/grappling_hook/commit/fdc85b39683bdcc584a83bc3f9e2b851da5bfb54))
+
+* fix: limit usage to a 200 block range #1 ([`93e0589`](https://github.com/edayot/grappling_hook/commit/93e0589f798fc91d2cf07929bd29164a623a67c6))
+
+* fix: kill function don&#39;t exist anymore ([`f2ea875`](https://github.com/edayot/grappling_hook/commit/f2ea875d4e1cc600e8be0a6f10434ed619042750))
+
+* fix: launching player after a delay ([`3f1b54a`](https://github.com/edayot/grappling_hook/commit/3f1b54add6f2ab48f6ee74342e086a01e5b6387f))
+
+* fix: delete weird useless tag ([`edcb805`](https://github.com/edayot/grappling_hook/commit/edcb80599b72d52484e74dc40f4d66e2743d04f9))
+
+* fix: reduce damage caused by the grappling ([`df085d8`](https://github.com/edayot/grappling_hook/commit/df085d88f41cb6392bcc7cadc10717bcda6ef11c))
+
+### Unknown
+
+* Update README.md ([`3bd5477`](https://github.com/edayot/grappling_hook/commit/3bd5477c06fec44a1fd77ba145a850b826391bdd))
+
+
 ## v1.0.0 (2024-08-09)
 
 ### Documentation
