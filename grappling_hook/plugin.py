@@ -164,50 +164,50 @@ def beet_default(ctx: Context):
         })
     )
     ShapedRecipe(
-        (
+        items=(
             (oak_log, oak_log, oak_log),
             (oak_log, crafting_table, oak_log),
             (smooth_stone, smooth_stone, smooth_stone),
         ),
-        (heavy_workbench, 1),
+        result=(heavy_workbench, 1),
     ).export(ctx, True)
 
     ShapedRecipe(
-        (
+        items=(
             (cobblestone, cobblestone, None),
             (cobblestone, crossbow, slime_ball),
             (None, slime_ball, lead),
         ),
-        (basic_grappling_hook, 1),
+        result=(basic_grappling_hook, 1),
         flags=["consume_tools"],
     ).export(ctx)
 
     ShapedRecipe(
-        (
+        items=(
             (diamond, diamond, None),
             (diamond, basic_grappling_hook, slime_block),
             (None, slime_block, None),
         ),
-        (normal_grappling_hook, 1),
+        result=(normal_grappling_hook, 1),
         flags=["consume_tools"],
     ).export(ctx)
 
     ShapedRecipe(
-        (
+        items=(
             (obsidian, obsidian, None),
             (obsidian, normal_grappling_hook, elytra),
             (None, elytra, None),
         ),
-        (advanced_grappling_hook, 1),
+        result=(advanced_grappling_hook, 1),
         flags=["consume_tools"],
     ).export(ctx)
 
     ShapedRecipe(
-        (
+        items=(
             (book, slime_ball, None),
             (crossbow, redstone, None),
             (None, None, None),
         ),
-        (guide, 1),
+        result=(guide, 1),
         flags=["consume_tools"],
     ).export(ctx)

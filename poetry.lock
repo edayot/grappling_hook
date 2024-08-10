@@ -24,13 +24,13 @@ files = [
 
 [[package]]
 name = "beet"
-version = "0.108.3"
+version = "0.108.4"
 description = "The Minecraft pack development kit"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "beet-0.108.3-py3-none-any.whl", hash = "sha256:803685194fef4f8360c989c49fee53a43e4723cf8d4be570df1c985358d090d9"},
-    {file = "beet-0.108.3.tar.gz", hash = "sha256:115bf3d0c6297d33f61d3e3d4e87981f922ed653efd97312af10069ff54476a2"},
+    {file = "beet-0.108.4-py3-none-any.whl", hash = "sha256:676f07671369caa58a811d95389161698fc3b77a9856092f49f095071a54c65e"},
+    {file = "beet-0.108.4.tar.gz", hash = "sha256:c0afefdd673e733faeef507885d1adf577b82e1af139e009ddfa02759ed04dbe"},
 ]
 
 [package.dependencies]
@@ -1034,13 +1034,13 @@ files = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.16.1"
+version = "0.17.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "simple_item_plugin-0.16.1-py3-none-any.whl", hash = "sha256:ff134b921bdfabfa84e57e16934f7e437a1d8794985aebe1549a8943d8fa63f9"},
-    {file = "simple_item_plugin-0.16.1.tar.gz", hash = "sha256:dc70be02d8be0a4853742a6a388f07c057aee58b1943c272bbffc80192bd2bbc"},
+    {file = "simple_item_plugin-0.17.0-py3-none-any.whl", hash = "sha256:8f5efa68ad47fc7a2997e6f26b7a33b7878ec89c4c38f057f4b4ef9fffd95532"},
+    {file = "simple_item_plugin-0.17.0.tar.gz", hash = "sha256:ab48acdb62606a8d1fddff64082253b9dfa1e7ff005f2e442060ee91a674e7d3"},
 ]
 
 [package.dependencies]
@@ -1181,13 +1181,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "weld-deps"
-version = "0.11.1"
+version = "0.13.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "weld_deps-0.11.1-py3-none-any.whl", hash = "sha256:088e198926deac95af7af7951ea283bfffe9ed3d87a0144d3d96f3a5ac05bf17"},
-    {file = "weld_deps-0.11.1.tar.gz", hash = "sha256:0dfa374adbc0165df630c414e52b225ec0ed7f9ce767d27d82438d483754fa36"},
+    {file = "weld_deps-0.13.0-py3-none-any.whl", hash = "sha256:81ef4b19e8bc416b9ec4f900afbcd719ce3778522a780ddbd0540e639fd038b6"},
+    {file = "weld_deps-0.13.0.tar.gz", hash = "sha256:46fc370743ebc39024b04cac42f8f398bcfa929e2a4553ddb07d5773d5225c8e"},
 ]
 
 [package.dependencies]
