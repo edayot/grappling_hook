@@ -10,9 +10,7 @@ scoreboard players operation #power grappling_hook.data = @s grappling_hook.arro
 
 execute 
     on origin 
-    run function ./player_motion:
-        tag @s remove grappling_hook.player
-    
+    run function ./player_motion:    
 
         execute store result score #px grappling_hook.data run data get entity @s Pos[0] 100
         execute store result score #py grappling_hook.data run data get entity @s Pos[1] 100

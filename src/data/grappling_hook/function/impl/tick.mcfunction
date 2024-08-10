@@ -17,7 +17,6 @@ execute
                 execute store result score #level grappling_hook.data run data get entity @s Inventory[{Slot:-106b}].components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
                 execute store result score #level grappling_hook.data run data get entity @s SelectedItem.components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
                 scoreboard players operation @s grappling_hook.id = #temp_id grappling_hook.data
-                tag @s add grappling_hook.player
                 tag @s add grappling_hook.player.me
         scoreboard players operation @s grappling_hook.arrow.power = #level grappling_hook.data
         #kill other arrows from the same player
