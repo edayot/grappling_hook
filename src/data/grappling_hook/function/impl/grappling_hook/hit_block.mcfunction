@@ -10,6 +10,7 @@ scoreboard players operation #power grappling_hook.data = @s grappling_hook.arro
 
 execute 
     on origin 
+    if entity @s[distance=..200]
     run function ./player_motion:    
 
         execute store result score #px grappling_hook.data run data get entity @s Pos[0] 100

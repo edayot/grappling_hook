@@ -20,7 +20,6 @@ execute
     as @e[tag=grappling_hook.arrow,tag=grappling_hook.arrow.summoned]
     at @s
     run function ~/arrow:
-        scoreboard players operation #temp_id grappling_hook.data = @s grappling_hook.id
         data remove storage grappling_hook:main temp.UUID
         data modify entity @s damage set value 0.01
 
@@ -30,7 +29,6 @@ execute
                 data modify storage grappling_hook:main temp.UUID set from entity @s UUID
                 execute store result score #level grappling_hook.data run data get entity @s Inventory[{Slot:-106b}].components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
                 execute store result score #level grappling_hook.data run data get entity @s SelectedItem.components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
-                scoreboard players operation @s grappling_hook.id = #temp_id grappling_hook.data
                 tag @s add grappling_hook.player.me
         scoreboard players operation @s grappling_hook.arrow.power = #level grappling_hook.data
         #kill other arrows from the same player
