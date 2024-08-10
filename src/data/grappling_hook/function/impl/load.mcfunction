@@ -10,6 +10,12 @@ scoreboard objectives add grappling_hook.data dummy
 scoreboard objectives add grappling_hook.arrow.power dummy
 scoreboard objectives add grappling_hook.id dummy
 
+scoreboard objectives add grappling_hook.launch.delay dummy
+scoreboard objectives add grappling_hook.launch.x dummy
+scoreboard objectives add grappling_hook.launch.y dummy
+scoreboard objectives add grappling_hook.launch.z dummy
+
+
 scoreboard players set #-1 grappling_hook.data -1
 scoreboard players set #2 grappling_hook.data 2
 

@@ -1,6 +1,20 @@
 schedule function grappling_hook:impl/tick 1t replace
 
 
+execute
+    as @a[scores={grappling_hook.launch.delay=1..}]
+    run function ./delayed_launch:
+        execute 
+            if score @s grappling_hook.launch.delay matches 1
+            run function ./launch:
+                scoreboard players operation $x player_motion.api.launch = @s grappling_hook.launch.x
+                scoreboard players operation $y player_motion.api.launch = @s grappling_hook.launch.y
+                scoreboard players operation $z player_motion.api.launch = @s grappling_hook.launch.z
+                function player_motion:api/launch_xyz
+        scoreboard players remove @s grappling_hook.launch.delay 1
+        
+
+
 
 execute
     as @e[tag=grappling_hook.arrow,tag=grappling_hook.arrow.summoned]

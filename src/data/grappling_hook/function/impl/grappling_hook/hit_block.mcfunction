@@ -53,10 +53,10 @@ execute
         scoreboard players operation #dz grappling_hook.data = #abs_dz grappling_hook.data
 
 
-        scoreboard players operation $x player_motion.api.launch = #dx grappling_hook.data
-        scoreboard players operation $y player_motion.api.launch = #dy grappling_hook.data
-        scoreboard players operation $z player_motion.api.launch = #dz grappling_hook.data
-        execute if entity @s[type=player] at @s run function player_motion:api/launch_xyz
+        scoreboard players set @s grappling_hook.launch.delay 1
+        scoreboard players operation @s grappling_hook.launch.x = #dx grappling_hook.data
+        scoreboard players operation @s grappling_hook.launch.y = #dy grappling_hook.data
+        scoreboard players operation @s grappling_hook.launch.z = #dz grappling_hook.data
         execute 
             unless entity @s[type=player] at @s run function ./merge_motion:
                 data modify storage grappling_hook:main temp.Motion set value [0.0d,0.0d,0.0d]
