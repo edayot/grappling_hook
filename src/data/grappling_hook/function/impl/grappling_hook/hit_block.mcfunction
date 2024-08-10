@@ -14,6 +14,9 @@ execute
     run function ./player_motion:   
         execute if entity @s[type=minecraft:player,nbt={FallFlying:1b}] run return fail
 
+        scoreboard players operation #current_max_abs_speed grappling_hook.data = #max_abs_speed grappling_hook.data
+        execute if score #power grappling_hook.data matches ..30 run scoreboard players operation #current_max_abs_speed grappling_hook.data /= #2 grappling_hook.data
+
         execute store result score #px grappling_hook.data run data get entity @s Pos[0] 100
         execute store result score #py grappling_hook.data run data get entity @s Pos[1] 100
         execute store result score #pz grappling_hook.data run data get entity @s Pos[2] 100
@@ -42,9 +45,9 @@ execute
         execute if score #dy grappling_hook.data matches ..0 run scoreboard players operation #abs_dy grappling_hook.data *= #-1 grappling_hook.data
         execute if score #dz grappling_hook.data matches ..0 run scoreboard players operation #abs_dz grappling_hook.data *= #-1 grappling_hook.data
 
-        execute if score #abs_dx grappling_hook.data > #max_abs_speed grappling_hook.data run scoreboard players operation #abs_dx grappling_hook.data = #max_abs_speed grappling_hook.data
-        execute if score #abs_dy grappling_hook.data > #max_abs_speed grappling_hook.data run scoreboard players operation #abs_dy grappling_hook.data = #max_abs_speed grappling_hook.data
-        execute if score #abs_dz grappling_hook.data > #max_abs_speed grappling_hook.data run scoreboard players operation #abs_dz grappling_hook.data = #max_abs_speed grappling_hook.data
+        execute if score #abs_dx grappling_hook.data > #current_max_abs_speed grappling_hook.data run scoreboard players operation #abs_dx grappling_hook.data = #current_max_abs_speed grappling_hook.data
+        execute if score #abs_dy grappling_hook.data > #current_max_abs_speed grappling_hook.data run scoreboard players operation #abs_dy grappling_hook.data = #current_max_abs_speed grappling_hook.data
+        execute if score #abs_dz grappling_hook.data > #current_max_abs_speed grappling_hook.data run scoreboard players operation #abs_dz grappling_hook.data = #current_max_abs_speed grappling_hook.data
 
         execute if score #dx grappling_hook.data matches ..0 run scoreboard players operation #abs_dx grappling_hook.data *= #-1 grappling_hook.data
         execute if score #dy grappling_hook.data matches ..0 run scoreboard players operation #abs_dy grappling_hook.data *= #-1 grappling_hook.data
