@@ -70,8 +70,8 @@ jobs:
         run: |
           COMMAND="poetry run beet -s data_pack.name=\"datapack\" -s resource_pack.name=\"resourcepack\" -s meta.weld_deps.enabled=false"
           COMMAND2="poetry run beet -s data_pack.name=\"datapack-bundled\" -s resource_pack.name=\"resourcepack-bundled\""
-          /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
           /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND2
+          /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
       - uses: actions/upload-artifact@v3
