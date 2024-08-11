@@ -1,6 +1,6 @@
 from beet import Context, Language
 from simple_item_plugin.utils import NAMESPACE, Lang, export_translated_string
-from simple_item_plugin.item import Item, MergeOverridesPolicy
+from simple_item_plugin.item import Item, MergeOverridesPolicy, ItemGroup
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
 import json
 
@@ -135,19 +135,19 @@ def beet_default(ctx: Context):
         })
     ).export(ctx)
 
-    crossbow = VanillaItem("minecraft:crossbow")
-    lead = VanillaItem("minecraft:lead")
-    cobblestone = VanillaItem("minecraft:cobblestone")
-    slime_ball = VanillaItem("minecraft:slime_ball")
-    slime_block = VanillaItem("minecraft:slime_block")
-    diamond = VanillaItem("minecraft:diamond")
-    elytra = VanillaItem("minecraft:elytra")
-    obsidian = VanillaItem("minecraft:obsidian")
-    book = VanillaItem("minecraft:book")
-    redstone = VanillaItem("minecraft:redstone")
-    oak_log = VanillaItem("minecraft:oak_log")
-    crafting_table = VanillaItem("minecraft:crafting_table")
-    smooth_stone = VanillaItem("minecraft:smooth_stone")
+    crossbow = VanillaItem(id="minecraft:crossbow").export(ctx)
+    lead = VanillaItem(id="minecraft:lead").export(ctx)
+    cobblestone = VanillaItem(id="minecraft:cobblestone").export(ctx)
+    slime_ball = VanillaItem(id="minecraft:slime_ball").export(ctx)
+    slime_block = VanillaItem(id="minecraft:slime_block").export(ctx)
+    diamond = VanillaItem(id="minecraft:diamond").export(ctx)
+    elytra = VanillaItem(id="minecraft:elytra").export(ctx)
+    obsidian = VanillaItem(id="minecraft:obsidian").export(ctx)
+    book = VanillaItem(id="minecraft:book").export(ctx)
+    redstone = VanillaItem(id="minecraft:redstone").export(ctx)
+    oak_log = VanillaItem(id="minecraft:oak_log").export(ctx)
+    crafting_table = VanillaItem(id="minecraft:crafting_table").export(ctx)
+    smooth_stone = VanillaItem(id="minecraft:smooth_stone").export(ctx)
     heavy_workbench = ExternalItem(
         id="smithed:crafter",
         loot_table_path="smithed.crafter:blocks/table",
@@ -162,7 +162,7 @@ def beet_default(ctx: Context):
             Lang.fr_fr: "C'est une table de craft qui permet de crafter les items de Grappling Hook.",
             Lang.en_us: "It's a crafting table that allows you to craft Grappling Hook items."
         })
-    )
+    ).export(ctx)
     ShapedRecipe(
         items=(
             (oak_log, oak_log, oak_log),
@@ -210,4 +210,11 @@ def beet_default(ctx: Context):
         ),
         result=(guide, 1),
         flags=["consume_tools"],
+    ).export(ctx)
+
+    ItemGroup(
+        id="special:all_items",
+        name=("", {}),
+        items_list=[heavy_workbench, basic_grappling_hook, normal_grappling_hook, advanced_grappling_hook, guide],
+        page_index=-1
     ).export(ctx)
