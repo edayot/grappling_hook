@@ -1,6 +1,7 @@
 
 advancement revoke @a only grappling_hook:impl/check_enchantments
 advancement revoke @a only grappling_hook:impl/grappling_hook
+advancement revoke @a only grappling_hook:impl/replace_guide
 
 
 
@@ -23,3 +24,7 @@ scoreboard players set #max_abs_speed grappling_hook.data 100000
 
 
 schedule function grappling_hook:impl/tick 1t replace
+
+
+major, minor, patch = ctx.project_version.split('.')
+data modify storage grappling_hook:main version set value {"major": int(major), "minor": int(minor), "patch": int(patch)}

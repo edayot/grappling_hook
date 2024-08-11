@@ -58,7 +58,8 @@ def beet_default(ctx: Context):
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 60,
-            "minecraft:custom_data": "{grappling_hook:1b}"
+            "minecraft:custom_data": "{grappling_hook:1b}",
+            "special:item_modifier": "grappling_hook:impl/add_versionning",
         },
         guide_description=(f"{NAMESPACE}.guide.basic", {
             Lang.en_us: "Has 60 uses and 10 of power.",
@@ -84,7 +85,8 @@ def beet_default(ctx: Context):
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 200,
-            "minecraft:custom_data": "{grappling_hook:1b}"
+            "minecraft:custom_data": "{grappling_hook:1b}",
+            "special:item_modifier": "grappling_hook:impl/add_versionning",
         },
         guide_description=(f"{NAMESPACE}.guide.normal", {
             Lang.en_us: "Has 200 uses and 15 of power.",
@@ -110,7 +112,8 @@ def beet_default(ctx: Context):
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 420,
-            "minecraft:custom_data": "{grappling_hook:1b}"
+            "minecraft:custom_data": "{grappling_hook:1b}",
+            "special:item_modifier": "grappling_hook:impl/add_versionning",
         },
         guide_description=(f"{NAMESPACE}.guide.advanced", {
             Lang.en_us: "Has 420 uses and 30 of power.",
@@ -127,7 +130,7 @@ def beet_default(ctx: Context):
         ),
         components_extra={
             "minecraft:enchantment_glint_override": False,
-            "special:item_modifier": "grappling_hook:impl/guide",
+            "special:item_modifier": ("grappling_hook:impl/guide", "grappling_hook:impl/add_versionning"),
         },
         guide_description=(f"{NAMESPACE}.guide.description", {
             Lang.en_us: "The guide you are currently holding.",

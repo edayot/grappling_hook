@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "equipment": {
+                                "mainhand": {
+                                    "predicates": {
+                                        "minecraft:custom_data": "{smithed:{id:\"grappling_hook:guide\"}}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "grappling_hook:impl/replace_guide"
+    }
+}
