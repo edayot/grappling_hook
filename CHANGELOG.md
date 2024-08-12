@@ -2,6 +2,25 @@
 
 
 
+## v1.1.1 (2024-08-12)
+
+### Chore
+
+* chore: update deps ([`6302da4`](https://github.com/edayot/grappling_hook/commit/6302da47214da055caa0602b588f815f996b3465))
+
+### Feature
+
+* feat: add versionning to items ([`31c6684`](https://github.com/edayot/grappling_hook/commit/31c668409b9c54aa0215ca758f3952b3c04e78a8))
+
+### Fix
+
+* fix: #2 grappling_hook usage in offhand ([`5a6ad42`](https://github.com/edayot/grappling_hook/commit/5a6ad42e33e1cdb50f57feb5c8d2d509649d36b7))
+
+### Unknown
+
+* f ([`db409d8`](https://github.com/edayot/grappling_hook/commit/db409d811bc7aabfc06a52915492a7bd55a93b93))
+
+
 ## v1.1.0 (2024-08-10)
 
 ### Chore
