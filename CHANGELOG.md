@@ -2,6 +2,17 @@
 
 
 
+## v1.2.0 (2024-11-08)
+
+### Chore
+
+* chore: update deps ([`bf9f9b9`](https://github.com/edayot/grappling_hook/commit/bf9f9b99c30b79ebeca5e98e6819e203f4f861cd))
+
+### Feature
+
+* feat: update to 1.21.3 ([`f10c4aa`](https://github.com/edayot/grappling_hook/commit/f10c4aa28913ce78e013aec57e43a277be0dc3c8))
+
+
 ## v1.1.1 (2024-08-12)
 
 ### Chore
