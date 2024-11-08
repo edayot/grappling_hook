@@ -1,0 +1,7 @@
+{
+    "parent": "item/crossbow",
+    "textures": {
+      "layer0": "grappling_hook:item/advanced_grappling_hook"
+    }
+  }
+  

@@ -20,7 +20,6 @@ modrinth_id = "bpmXxZTt"
 
 
 [tool.beet.meta.simple_item_plugin]
-custom_model_data = 1439000
 generate_guide = true
 render_path_for_pack_png = "grappling_hook:render/grappling_hook/item/basic_grappling_hook"
 items_on_first_page = true
@@ -29,8 +28,8 @@ items_on_first_page = true
 predicate_order = ["custom_model_data", "pulling", "pull", "charged", "firework"]
 
 [tool.beet.meta.weld_deps.deps]
-"player_motion" = "1.3.1"
-"smithed.crafter.dev" = "0.4.1"
+"player_motion" = "1.4.2"
+"smithed.crafter.dev" = "0.5.0"
 
 [tool.semantic_release]
 major_on_zero = false
@@ -80,12 +79,12 @@ ignore = [
 [tool.beet.data_pack]
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
-pack_format = 48
+pack_format = 57
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
-
+pack_format = 42
 
 [tool.beet.meta.mecha]
 multiline = true
