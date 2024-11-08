@@ -2,6 +2,13 @@
 
 
 
+## v1.2.1 (2024-11-08)
+
+### Chore
+
+* chore: downgrade model_resolver ([`70223ab`](https://github.com/edayot/grappling_hook/commit/70223ab87dcd655804b27fd2ecab300d8b7aad90))
+
+
 ## v1.2.0 (2024-11-08)
 
 ### Chore
