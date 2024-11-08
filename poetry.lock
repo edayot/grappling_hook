@@ -489,13 +489,13 @@ tokenstream = ">=1.7.0,<2.0.0"
 
 [[package]]
 name = "model-resolver"
-version = "0.14.1"
+version = "0.12.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "model_resolver-0.14.1-py3-none-any.whl", hash = "sha256:f0157ee434e0a5109a7db58fd365e8d59a3efce7c8b5b03396edea891c004b82"},
-    {file = "model_resolver-0.14.1.tar.gz", hash = "sha256:35baa92f48039a8cca5a3bb8e12feec08dd8f88563f506173c1e0e5870c6dd72"},
+    {file = "model_resolver-0.12.0-py3-none-any.whl", hash = "sha256:973abe187554777b40b215ba84b20f5c18510f6820c5e333181f5aa7a7e9e695"},
+    {file = "model_resolver-0.12.0.tar.gz", hash = "sha256:784320820093c904436c68c78d162f4c82aa6a9086a6bd079b1b2eaff4ae0fc2"},
 ]
 
 [package.dependencies]
@@ -1235,4 +1235,4 @@ smithed = ">=0.16.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "082e23fd819722d98e1cd4010d64584b2a18cd05ee59b64200b951369093b22f"
+content-hash = "63d28214b6c707a0920be87f5a2b2554ac6b22a2e47c358080f75d61420ece30"
