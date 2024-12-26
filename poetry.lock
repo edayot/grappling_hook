@@ -980,13 +980,13 @@ files = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.22.0"
+version = "0.22.1"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.12"
 files = [
-    {file = "simple_item_plugin-0.22.0-py3-none-any.whl", hash = "sha256:69df132c1fe87e8a55be49be0426c5c7ce2e6073b8e1f51b355ca5da06b2177a"},
-    {file = "simple_item_plugin-0.22.0.tar.gz", hash = "sha256:c30456aff29e97f5fc2515858166e4db13d6ffd446a3aa74d171f74210ed82b1"},
+    {file = "simple_item_plugin-0.22.1-py3-none-any.whl", hash = "sha256:29f9de434ba8f88f184a89ac5063e3badfba9fb3e3322985511ef394f87f167a"},
+    {file = "simple_item_plugin-0.22.1.tar.gz", hash = "sha256:d4d7663bcd4ef37d5aca83f18f6f904bbaa591355011f18909c428c2c7094bb4"},
 ]
 
 [package.dependencies]
@@ -1146,4 +1146,4 @@ smithed = ">=0.16.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "8290bc5bd45f0bea4b4b923545f4f9f98eb47a6ffb6a6ae8560d7d35f8940bf5"
+content-hash = "723c211c0e7f312807fabac390656b8249e2b9c47d2823630cf8ecd5eaabd77b"
