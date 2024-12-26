@@ -6,9 +6,9 @@ authors = ["edayot <pro.e.dayot@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-simple-item-plugin = ">=0.9.1"
-model-resolver = "0.12.0"
+python = "^3.12"
+simple-item-plugin = ">=0.22.0"
+model-resolver = ">=0.12.0"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^8.7.0"
@@ -30,7 +30,7 @@ predicate_order = ["custom_model_data", "pulling", "pull", "charged", "firework"
 
 [tool.beet.meta.weld_deps.deps]
 "player_motion" = "1.4.2"
-"smithed.crafter.dev" = "0.5.0"
+"crafter" = "0.6.2"
 
 [tool.semantic_release]
 major_on_zero = false
@@ -94,6 +94,7 @@ match = ["grappling_hook:**"]
 render_size = 256
 load_vanilla = true
 save_namespace = "grappling_hook"
+minecraft_version = "1.21.4"
 
 
 
