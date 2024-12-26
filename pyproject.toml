@@ -80,12 +80,10 @@ ignore = [
 [tool.beet.data_pack]
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
-pack_format = 57
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
-pack_format = 42
 
 [tool.beet.meta.mecha]
 multiline = true
