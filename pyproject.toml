@@ -22,7 +22,7 @@ modrinth_id = "bpmXxZTt"
 
 [tool.beet.meta.simple_item_plugin]
 generate_guide = true
-render_path_for_pack_png = "grappling_hook:render/grappling_hook/item/basic_grappling_hook"
+item_for_pack_png = "basic_grappling_hook"
 items_on_first_page = true
 
 [tool.beet.meta.model_merging]
