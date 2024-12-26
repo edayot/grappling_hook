@@ -2,6 +2,31 @@
 
 
 
+## v1.3.0 (2024-12-26)
+
+### Chore
+
+* chore: bump deps ([`5adad61`](https://github.com/edayot/grappling_hook/commit/5adad611643e77485274a1e77b5afd96c5279bd0))
+
+* chore: update simple item plugin ([`bbe9bdb`](https://github.com/edayot/grappling_hook/commit/bbe9bdb663e1215d8cfc61042c50d6275dc62e95))
+
+* chore: mc version ([`9e1721c`](https://github.com/edayot/grappling_hook/commit/9e1721c157498b7811afedddf6dd3bdc036ea434))
+
+### Feature
+
+* feat: upgrade to 1.21.4 ([`e1b43f4`](https://github.com/edayot/grappling_hook/commit/e1b43f4868922044c9fb95019f21ad25f5e95a81))
+
+### Fix
+
+* fix: pack.png ([`8869a96`](https://github.com/edayot/grappling_hook/commit/8869a969426f88717821963a9b0989ac9eba810e))
+
+### Unknown
+
+* chor: bump python version ([`f8b9e6c`](https://github.com/edayot/grappling_hook/commit/f8b9e6c4dee2fc24b00db54a279399f933803ca2))
+
+* Update README.md ([`6e6f9c1`](https://github.com/edayot/grappling_hook/commit/6e6f9c12d791c1e90c203cdbae55450710869537))
+
+
 ## v1.2.1 (2024-11-08)
 
 ### Chore
