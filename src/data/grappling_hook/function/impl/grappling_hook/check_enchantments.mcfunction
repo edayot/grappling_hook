@@ -20,12 +20,13 @@ function ~/loop:
     execute store result score #slot grappling_hook.data run data get storage grappling_hook:main temp.RealInventory[0].Slot
     execute store result score #glint grappling_hook.data run data get storage grappling_hook:main temp.RealInventory[0].components."minecraft:enchantment_glint_override"
 
-    data remove storage grappling_hook:main temp.RealInventory[0].components."minecraft:enchantments".levels."grappling_hook:grappling_hook"
+    data remove storage grappling_hook:main temp.RealInventory[0].components."minecraft:enchantments"."grappling_hook:grappling_hook"
     execute 
         summon item_display 
         run function ~/item_display:
             data modify entity @s item set from storage grappling_hook:main temp.RealInventory[0]
-            execute store result score #has_no_enchantments grappling_hook.data if items entity @s contents *[minecraft:enchantments={levels:{}}]
+            scoreboard players set #has_no_enchantments grappling_hook.data 1
+            execute store result score #has_no_enchantments grappling_hook.data if items entity @s contents *[minecraft:enchantments={}]
             kill @s
 
     execute

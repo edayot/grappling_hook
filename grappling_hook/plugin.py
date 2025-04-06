@@ -49,9 +49,7 @@ def beet_default(ctx: Context):
         ),
         components_extra={
             "minecraft:enchantments": {
-                "levels": {
-                    "grappling_hook:grappling_hook": 10
-                },
+                "grappling_hook:grappling_hook": 10
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 60,
@@ -73,9 +71,7 @@ def beet_default(ctx: Context):
         ),
         components_extra={
             "minecraft:enchantments": {
-                "levels": {
-                    "grappling_hook:grappling_hook": 15
-                },
+                "grappling_hook:grappling_hook": 15
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 200,
@@ -97,9 +93,7 @@ def beet_default(ctx: Context):
         ),
         components_extra={
             "minecraft:enchantments": {
-                "levels": {
-                    "grappling_hook:grappling_hook": 30
-                },
+                "grappling_hook:grappling_hook": 30
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 420,
@@ -150,7 +144,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"block.smithed.crafter"})
+                "minecraft:item_name": {"translate":"block.smithed.crafter", "color":"white"},
             }
         }, 
         guide_description=(f"{NAMESPACE}.guide.heavy_workbench", {
