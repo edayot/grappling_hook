@@ -46,8 +46,8 @@ jobs:
           GIT_HASH: ${{ github.sha }}
         with:
           commands: |
-            poetry run beet -s data_pack.name=\"datapack\" -s resource_pack.name=\"resourcepack\" -s meta.weld_deps.enabled=false
             poetry run beet -s data_pack.name=\"datapack-bundled\" -s resource_pack.name=\"resourcepack-bundled\"
+            poetry run beet -s data_pack.name=\"datapack\" -s resource_pack.name=\"resourcepack\" -s meta.weld_deps.enabled=false
 
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
