@@ -2,6 +2,29 @@
 
 
 
+## v1.4.0 (2025-04-06)
+
+### Chore
+
+* chore: fix version bump ([`09450c0`](https://github.com/edayot/grappling_hook/commit/09450c0b7e379b872192cb025be2132cbab3c4fe))
+
+* chore: update model_resolver workflow ([`9a6abfd`](https://github.com/edayot/grappling_hook/commit/9a6abfd105b6e5e819dc3fc5eaa5afd180d6494c))
+
+* chore: upload artifact ([`5cff9a2`](https://github.com/edayot/grappling_hook/commit/5cff9a20e3e1aec538537bd7d1d128cbf59aef5e))
+
+* chore: update simple item plugin ([`841550a`](https://github.com/edayot/grappling_hook/commit/841550a25fc1cea56daea20c577a8e7aca5ead14))
+
+* chore: cache ([`ba7a64c`](https://github.com/edayot/grappling_hook/commit/ba7a64c02ca64264c01629830c42e9d3cf1af7a5))
+
+### Feature
+
+* feat: update to 1.21.5 ([`f27af01`](https://github.com/edayot/grappling_hook/commit/f27af01190cb86a18e8ab26c4cfaae08b73cc793))
+
+### Unknown
+
+* ds ([`78e51e0`](https://github.com/edayot/grappling_hook/commit/78e51e0d4676654d4f2f15606e45305a29ef3145))
+
+
 ## v1.3.0 (2024-12-26)
 
 ### Chore
