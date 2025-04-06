@@ -46,6 +46,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
+          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
         with:
           commands: |
             git config --global user.name "github-actions"
@@ -65,7 +66,7 @@ jobs:
               poetry run semantic-release -v version --major
             fi
             poetry run semantic-release -v publish
-            
+
       - name: Push to smithed
         continue-on-error: true
         run: poetry run python .github/workflows/push-to-smithed.py 
