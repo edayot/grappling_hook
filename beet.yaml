@@ -1,0 +1,86 @@
+id: grappling_hook
+version: 1.4.1
+description: ""
+author: edayot
+
+
+output: build
+
+pipeline:
+  - simple_item_plugin
+  - grappling_hook
+
+require:
+  - weld_deps.contrib.mecha_auto_include.require
+  - bolt
+  - mecha.contrib.relative_location
+  - mecha.contrib.nested_location
+
+ignore:
+  - stable_cache.json
+
+data_pack:
+  name: "{{ project_id }}_{{ project_version }}_dp_bundled"
+  load: src
+
+resource_pack:
+  name: "{{ project_id }}_{{ project_version }}_rp_bundled"
+  load: src
+
+meta:
+  mc_supports:
+    - "26.2"
+  minecraft_version: "26.2"
+  modrinth_id: "bpmXxZTt"
+
+  simple_item_plugin:
+    generate_guide: true
+    item_for_pack_png: "basic_grappling_hook"
+    items_on_first_page: true
+    load_function: "grappling_hook:impl/load"
+
+  model_merging:
+    predicate_order:
+      - custom_model_data
+      - pulling
+      - pull
+      - charged
+      - firework
+
+  weld_deps:
+    merge_with_weld: false
+    merge_after: true
+    deps:
+      player_motion: latest
+      crafter: latest
+
+  mecha:
+    multiline: true
+    match:
+      - "grappling_hook:**"
+
+  model_resolver:
+    render_size: 256
+    load_vanilla: true
+    save_namespace: grappling_hook
+    minecraft_version: "26.2"
+
+  smithed:
+    versioning:
+      scheduled_paths: "impl/tick"
+
+      lantern_load:
+        step: load
+        tag_path: load
+        function_path: "impl/test_load"
+
+      refactor:
+        match: "{{ project_id }}:*"
+        find: "{{ project_id }}:impl/"
+        replace: "{{ project_id }}:v{{ project_version }}/"
+
+      api:
+        match: "{{ project_id }}:v{{ project_version }}"
+        implementation_prefix: "{{ project_id }}:v{{ project_version }}/"
+        version_check_path: "v{{ project_version }}/calls"
+        tag_path: calls
