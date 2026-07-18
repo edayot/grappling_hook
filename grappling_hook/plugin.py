@@ -97,7 +97,6 @@ def beet_default(ctx: Context):
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 420,
-            "minecraft:custom_data": "{grappling_hook:1b}",
             "special:item_modifier": "grappling_hook:impl/add_versionning",
         },
         guide_description=(f"{NAMESPACE}.guide.advanced", {

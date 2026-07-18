@@ -1,17 +1,17 @@
 {
-	"criteria": {
-		"requirement": {
-			"trigger": "minecraft:using_item",
-			"conditions": {
-				"item": {
-					"predicates": {
-						"minecraft:custom_data": "{grappling_hook:1b}"
-					}
-				}
-			}
-		}
-	},
-	"rewards": {
-		"function": "grappling_hook:impl/grappling_hook/use"
-	}
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:shot_crossbow",
+            "conditions": {
+                "item": {
+                    "predicates": {
+                        "minecraft:custom_data": "{grappling_hook:1b}"
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "grappling_hook:impl/grappling_hook/use"
+    }
 }

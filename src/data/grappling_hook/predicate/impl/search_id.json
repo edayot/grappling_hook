@@ -1,0 +1,26 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+        "grappling_hook.data": {
+            "min": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#SEARCH_ID"
+                },
+                "score": "grappling_hook.data",
+                "scale": 1
+            },
+            "max": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#SEARCH_ID"
+                },
+                "score": "grappling_hook.data",
+                "scale": 1
+            }
+        }
+    }
+}
