@@ -40,16 +40,16 @@ def beet_default(ctx: Context):
         Lang.en_us: "This guide will show you how to craft a grappling hook (they are used like a crossbow).\n\nHere are all the crafts of the datapack :",
         Lang.fr_fr: "Ce guide va vous montrer comment fabriquer un grappin (ils sont utilisés comme des arbalètes).\n\nVoici tout les crafts du datapack :"
     }))
-    basic_grappling_hook = Item(
-        id="basic_grappling_hook",
+    grappling_hook = Item(
+        id="grappling_hook",
         base_item="minecraft:crossbow",
         item_name=(
-            f"{NAMESPACE}.item.basic_grappling_hook",
-            {Lang.en_us: "Basic Grappling hook", Lang.fr_fr: "Grapin basique"},
+            f"{NAMESPACE}.item.grappling_hook",
+            {Lang.en_us: "Grappling hook"},
         ),
         components_extra={
             "minecraft:enchantments": {
-                "grappling_hook:grappling_hook": 10
+                "grappling_hook:grappling_hook": 1
             },
             "minecraft:enchantment_glint_override": False,
             "minecraft:max_damage": 60,
@@ -57,51 +57,8 @@ def beet_default(ctx: Context):
             "special:item_modifier": "grappling_hook:impl/add_versionning",
         },
         guide_description=(f"{NAMESPACE}.guide.basic", {
-            Lang.en_us: "Has 60 uses and 10 of power.",
-            Lang.fr_fr: "Il a 60 utilisations et une puissance de 10."
-        })
-    ).export(ctx)
-
-    normal_grappling_hook = Item(
-        id="normal_grappling_hook",
-        base_item="minecraft:crossbow",
-        item_name=(
-            f"{NAMESPACE}.item.normal_grappling_hook",
-            {Lang.en_us: "Normal Grappling hook", Lang.fr_fr: "Grapin normal"},
-        ),
-        components_extra={
-            "minecraft:enchantments": {
-                "grappling_hook:grappling_hook": 15
-            },
-            "minecraft:enchantment_glint_override": False,
-            "minecraft:max_damage": 200,
-            "minecraft:custom_data": "{grappling_hook:1b}",
-            "special:item_modifier": "grappling_hook:impl/add_versionning",
-        },
-        guide_description=(f"{NAMESPACE}.guide.normal", {
-            Lang.en_us: "Has 200 uses and 15 of power.",
-            Lang.fr_fr: "Il a 200 utilisations et une puissance de 15."
-        })
-    ).export(ctx)
-
-    advanced_grappling_hook = Item(
-        id="advanced_grappling_hook",
-        base_item="minecraft:crossbow",
-        item_name=(
-            f"{NAMESPACE}.item.advanced_grappling_hook",
-            {Lang.en_us: "Advanced Grappling hook", Lang.fr_fr: "Grapin avancé"},
-        ),
-        components_extra={
-            "minecraft:enchantments": {
-                "grappling_hook:grappling_hook": 30
-            },
-            "minecraft:enchantment_glint_override": False,
-            "minecraft:max_damage": 420,
-            "special:item_modifier": "grappling_hook:impl/add_versionning",
-        },
-        guide_description=(f"{NAMESPACE}.guide.advanced", {
-            Lang.en_us: "Has 420 uses and 30 of power.",
-            Lang.fr_fr: "Il a 420 utilisations et une puissance de 30."
+            Lang.en_us: "It is the most basic grapplign hook, checkout upgrades !",
+            Lang.fr_fr: "C'est le grappin le plus basique, regardez les améliorations !"
         })
     ).export(ctx)
 
@@ -166,27 +123,7 @@ def beet_default(ctx: Context):
             (cobblestone, crossbow, slime_ball),
             (None, slime_ball, lead),
         ),
-        result=(basic_grappling_hook, 1),
-        flags=["consume_tools"],
-    ).export(ctx)
-
-    ShapedRecipe(
-        items=(
-            (diamond, diamond, None),
-            (diamond, basic_grappling_hook, slime_block),
-            (None, slime_block, None),
-        ),
-        result=(normal_grappling_hook, 1),
-        flags=["consume_tools"],
-    ).export(ctx)
-
-    ShapedRecipe(
-        items=(
-            (obsidian, obsidian, None),
-            (obsidian, normal_grappling_hook, elytra),
-            (None, elytra, None),
-        ),
-        result=(advanced_grappling_hook, 1),
+        result=(grappling_hook, 1),
         flags=["consume_tools"],
     ).export(ctx)
 
@@ -203,7 +140,7 @@ def beet_default(ctx: Context):
     ItemGroup(
         id="special:all_items",
         name=("", {}),
-        items_list=[heavy_workbench, basic_grappling_hook, normal_grappling_hook, advanced_grappling_hook, guide],
+        items_list=[heavy_workbench, guide],
         page_index=-1,
         item_icon=guide
     ).export(ctx)

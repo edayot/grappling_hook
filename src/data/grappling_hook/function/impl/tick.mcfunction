@@ -23,22 +23,36 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
             if entity @p[tag=grappling_hook.me, predicate=grappling_hook:impl/forward] 
             as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
             run function ~/go_up:
-                scoreboard players set @s bs.vel.x 0
-                scoreboard players set @s bs.vel.y 200
-                scoreboard players set @s bs.vel.z 0
+                execute at @e[type=arrow, tag=grappling_hook.arrow.me] run function #bs.position:get_relative_ata {scale:1000}
+                scoreboard players operation $vector.normalize.0 bs.in = @s bs.pos.x
+                scoreboard players operation $vector.normalize.1 bs.in = @s bs.pos.y
+                scoreboard players operation $vector.normalize.2 bs.in = @s bs.pos.z
+                function #bs.vector:normalize {scale:-200}
+
+                scoreboard players operation @s bs.vel.x = $vector.normalize.0 bs.out
+                scoreboard players operation @s bs.vel.y = $vector.normalize.1 bs.out
+                scoreboard players operation @s bs.vel.z = $vector.normalize.2 bs.out
                 function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
+
                 function #bs.position:get_distance_ata {scale:1000}
                 scoreboard players operation @n[tag=grappling_hook.arrow.me] grappling_hook.block_range = $position.get_distance_ata bs.out
         execute 
             if entity @p[tag=grappling_hook.me, predicate=grappling_hook:impl/backward] 
             as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
             run function ~/go_down:
-                scoreboard players set @s bs.vel.x 0
-                scoreboard players set @s bs.vel.y -200
-                scoreboard players set @s bs.vel.z 0
+                execute at @e[type=arrow, tag=grappling_hook.arrow.me] run function #bs.position:get_relative_ata {scale:1000}
+                scoreboard players operation $vector.normalize.0 bs.in = @s bs.pos.x
+                scoreboard players operation $vector.normalize.1 bs.in = @s bs.pos.y
+                scoreboard players operation $vector.normalize.2 bs.in = @s bs.pos.z
+                function #bs.vector:normalize {scale:200}
+
+                scoreboard players operation @s bs.vel.x = $vector.normalize.0 bs.out
+                scoreboard players operation @s bs.vel.y = $vector.normalize.1 bs.out
+                scoreboard players operation @s bs.vel.z = $vector.normalize.2 bs.out
                 function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
+
                 function #bs.position:get_distance_ata {scale:1000}
-                scoreboard players operation @n[tag=grappling_hook.arrow.me] grappling_hook.block_range = $position.get_distance_ata bs.out        
+                scoreboard players operation @n[tag=grappling_hook.arrow.me] grappling_hook.block_range = $position.get_distance_ata bs.out
 
         execute on origin run function #bs.position:get_distance_ata {scale:1000}
         scoreboard players operation #diff grappling_hook.data = $position.get_distance_ata bs.out
@@ -77,7 +91,11 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
 
                 # Constantes (scale 1000) : SCALE / DAMPING
                 scoreboard players set #SCALE grappling_hook.data 1000
-                scoreboard players set #DAMPING grappling_hook.data 981
+                scoreboard players set #DAMPING grappling_hook.data 986
+
+                execute if score @n[tag=grappling_hook.arrow.me] grappling_hook.block_range matches 10001..15000 run scoreboard players set #DAMPING grappling_hook.data 981
+                execute if score @n[tag=grappling_hook.arrow.me] grappling_hook.block_range matches 5001..10000 run scoreboard players set #DAMPING grappling_hook.data 950
+                execute if score @n[tag=grappling_hook.arrow.me] grappling_hook.block_range matches ..5000 run scoreboard players set #DAMPING grappling_hook.data 900
 
                 # v_free = v_old * damping (+ gravite sur Y)
                 scoreboard players operation #fvx grappling_hook.data = @s grappling_hook.speed.x

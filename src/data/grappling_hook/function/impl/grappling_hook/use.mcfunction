@@ -16,6 +16,7 @@ execute as @e[type=arrow, distance=..5, tag=!grappling_hook.arrow.already] run f
 
     scoreboard players operation @s grappling_hook.data = #GLOBAL grappling_hook.data
 
+    data modify entity @s pickup set value 0b
     tag @s add grappling_hook.arrow
     tag @s add grappling_hook.arrow.me
     execute positioned ~ ~-16 ~ summon item_display run function ~/execute_summon:

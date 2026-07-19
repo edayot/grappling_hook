@@ -35,7 +35,7 @@ meta:
 
   simple_item_plugin:
     generate_guide: true
-    item_for_pack_png: "basic_grappling_hook"
+    item_for_pack_png: "grappling_hook"
     items_on_first_page: true
     load_function: "grappling_hook:impl/load"
 
