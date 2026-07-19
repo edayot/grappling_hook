@@ -24,7 +24,7 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
             as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
             run function ~/go_up:
                 scoreboard players set @s bs.vel.x 0
-                scoreboard players set @s bs.vel.y 100
+                scoreboard players set @s bs.vel.y 200
                 scoreboard players set @s bs.vel.z 0
                 function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
                 function #bs.position:get_distance_ata {scale:1000}
@@ -34,7 +34,7 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
             as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
             run function ~/go_down:
                 scoreboard players set @s bs.vel.x 0
-                scoreboard players set @s bs.vel.y -100
+                scoreboard players set @s bs.vel.y -200
                 scoreboard players set @s bs.vel.z 0
                 function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
                 function #bs.position:get_distance_ata {scale:1000}
@@ -75,9 +75,9 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
 # here update velocity @s grappling_hook.speed.[xyz]
                 execute at @e[type=arrow, tag=grappling_hook.arrow.me] run function #bs.position:get_relative_ata {scale:1000}
 
-                # Constantes (scale 1000) : SCALE=1000, DAMPING=0.99
+                # Constantes (scale 1000) : SCALE / DAMPING
                 scoreboard players set #SCALE grappling_hook.data 1000
-                scoreboard players set #DAMPING grappling_hook.data 990
+                scoreboard players set #DAMPING grappling_hook.data 981
 
                 # v_free = v_old * damping (+ gravite sur Y)
                 scoreboard players operation #fvx grappling_hook.data = @s grappling_hook.speed.x
