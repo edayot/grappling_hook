@@ -18,6 +18,28 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
 
     execute if entity @s[tag=grappling_hook.arrow.in_ground] run function ~/move_player:
         execute if score @s grappling_hook.block_range matches ..20 run return fail
+
+        execute 
+            if entity @p[tag=grappling_hook.me, predicate=grappling_hook:impl/forward] 
+            as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
+            run function ~/go_up:
+                scoreboard players set @s bs.vel.x 0
+                scoreboard players set @s bs.vel.y 100
+                scoreboard players set @s bs.vel.z 0
+                function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
+                function #bs.position:get_distance_ata {scale:1000}
+                scoreboard players operation @n[tag=grappling_hook.arrow.me] grappling_hook.block_range = $position.get_distance_ata bs.out
+        execute 
+            if entity @p[tag=grappling_hook.me, predicate=grappling_hook:impl/backward] 
+            as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
+            run function ~/go_down:
+                scoreboard players set @s bs.vel.x 0
+                scoreboard players set @s bs.vel.y -100
+                scoreboard players set @s bs.vel.z 0
+                function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
+                function #bs.position:get_distance_ata {scale:1000}
+                scoreboard players operation @n[tag=grappling_hook.arrow.me] grappling_hook.block_range = $position.get_distance_ata bs.out        
+
         execute on origin run function #bs.position:get_distance_ata {scale:1000}
         scoreboard players operation #diff grappling_hook.data = $position.get_distance_ata bs.out
         scoreboard players operation #diff grappling_hook.data -= @s grappling_hook.block_range
@@ -28,9 +50,7 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
             kill @e[predicate=grappling_hook:impl/search_id, type=!player]
 
 
-        execute if score #diff grappling_hook.data matches ..400 run return run function ~/disable_rope:
-            tag @p[tag=grappling_hook.me] remove grappling_hook.rope_attached
-            kill @e[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id]
+        execute if score #diff grappling_hook.data matches ..400 unless entity @p[tag=grappling_hook.me,tag=grappling_hook.rope_attached] run return fail
         
         
         execute as @p[tag=grappling_hook.me,tag=!grappling_hook.rope_attached] at @s run function ~/attach_rope:
@@ -43,6 +63,8 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
                 execute store result score @s grappling_hook.speed.x run data get entity @p[tag=grappling_hook.me] Motion[0] 1000
                 execute store result score @s grappling_hook.speed.y run data get entity @p[tag=grappling_hook.me] Motion[1] 1000
                 execute store result score @s grappling_hook.speed.z run data get entity @p[tag=grappling_hook.me] Motion[2] 1000
+
+                function #bs.hitbox:set_entity {with:{width:0.5, height:1.2, depth:0.5, centered: false}}
 
             
         execute 

@@ -3,6 +3,7 @@ tag @s add grappling_hook.me
 
 scoreboard players operation #SEARCH_ID grappling_hook.data = @s grappling_hook.data
 kill @e[predicate=grappling_hook:impl/search_id, type=!player]
+tag @s remove grappling_hook.rope_attached
 
 scoreboard players add #GLOBAL grappling_hook.data 1
 scoreboard players operation @s grappling_hook.data = #GLOBAL grappling_hook.data

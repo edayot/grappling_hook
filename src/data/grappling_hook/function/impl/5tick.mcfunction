@@ -8,3 +8,7 @@ execute
         execute as @e[type=arrow, tag=grappling_hook.arrow, predicate=grappling_hook:impl/search_id] run scoreboard players set #temp grappling_hook.data 1
         
         execute if score #temp grappling_hook.data matches 0 run kill @s
+
+execute 
+    as @e[type=item_display, tag=grappling_hook.swinger] 
+    run function ~/check
