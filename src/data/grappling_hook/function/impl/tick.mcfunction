@@ -40,19 +40,105 @@ execute as @e[type=arrow, tag=grappling_hook.arrow] at @s run function ~/arrow:
                 data merge entity @s {teleport_duration:3}
                 scoreboard players operation @s grappling_hook.data = #SEARCH_ID grappling_hook.data
                 # TODO: copier la vitesse du joueur dans le swinger (au minimum la norme)
+                execute store result score @s grappling_hook.speed.x run data get entity @p[tag=grappling_hook.me] Motion[0] 1000
+                execute store result score @s grappling_hook.speed.y run data get entity @p[tag=grappling_hook.me] Motion[1] 1000
+                execute store result score @s grappling_hook.speed.z run data get entity @p[tag=grappling_hook.me] Motion[2] 1000
 
-        execute 
-            at @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
-            run function #bs.position:get_relative_ata {scale:1000}
-        
-        
             
         execute 
             as @n[tag=grappling_hook.swinger, predicate=grappling_hook:impl/search_id] 
             at @s 
             run function ~/move_swinger:
-                scoreboard players set @s bs.vel.x 100
                 ride @p[tag=grappling_hook.me] mount @s
+# here update velocity @s grappling_hook.speed.[xyz]
+                execute at @e[type=arrow, tag=grappling_hook.arrow.me] run function #bs.position:get_relative_ata {scale:1000}
+
+                # Constantes (scale 1000) : SCALE=1000, DAMPING=0.99
+                scoreboard players set #SCALE grappling_hook.data 1000
+                scoreboard players set #DAMPING grappling_hook.data 990
+
+                # v_free = v_old * damping (+ gravite sur Y)
+                scoreboard players operation #fvx grappling_hook.data = @s grappling_hook.speed.x
+                scoreboard players operation #fvx grappling_hook.data *= #DAMPING grappling_hook.data
+                scoreboard players operation #fvx grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #fvy grappling_hook.data = @s grappling_hook.speed.y
+                scoreboard players operation #fvy grappling_hook.data *= #DAMPING grappling_hook.data
+                scoreboard players operation #fvy grappling_hook.data /= #SCALE grappling_hook.data
+                scoreboard players remove #fvy grappling_hook.data 80
+
+                scoreboard players operation #fvz grappling_hook.data = @s grappling_hook.speed.z
+                scoreboard players operation #fvz grappling_hook.data *= #DAMPING grappling_hook.data
+                scoreboard players operation #fvz grappling_hook.data /= #SCALE grappling_hook.data
+
+                # Produit scalaire r . v_free (divise terme par terme, anti-overflow)
+                scoreboard players operation #t1 grappling_hook.data = @s bs.pos.x
+                scoreboard players operation #t1 grappling_hook.data *= #fvx grappling_hook.data
+                scoreboard players operation #t1 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #t2 grappling_hook.data = @s bs.pos.y
+                scoreboard players operation #t2 grappling_hook.data *= #fvy grappling_hook.data
+                scoreboard players operation #t2 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #t3 grappling_hook.data = @s bs.pos.z
+                scoreboard players operation #t3 grappling_hook.data *= #fvz grappling_hook.data
+                scoreboard players operation #t3 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #dot grappling_hook.data = #t1 grappling_hook.data
+                scoreboard players operation #dot grappling_hook.data += #t2 grappling_hook.data
+                scoreboard players operation #dot grappling_hook.data += #t3 grappling_hook.data
+
+                # |v_old|^2 (vitesse AVANT amortissement)
+                scoreboard players operation #v1 grappling_hook.data = @s grappling_hook.speed.x
+                scoreboard players operation #v1 grappling_hook.data *= @s grappling_hook.speed.x
+                scoreboard players operation #v1 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #v2 grappling_hook.data = @s grappling_hook.speed.y
+                scoreboard players operation #v2 grappling_hook.data *= @s grappling_hook.speed.y
+                scoreboard players operation #v2 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #v3 grappling_hook.data = @s grappling_hook.speed.z
+                scoreboard players operation #v3 grappling_hook.data *= @s grappling_hook.speed.z
+                scoreboard players operation #v3 grappling_hook.data /= #SCALE grappling_hook.data
+
+                scoreboard players operation #vsq grappling_hook.data = #v1 grappling_hook.data
+                scoreboard players operation #vsq grappling_hook.data += #v2 grappling_hook.data
+                scoreboard players operation #vsq grappling_hook.data += #v3 grappling_hook.data
+
+                # tension/m = (r.v_free + |v_old|^2) * SCALE / L
+                scoreboard players operation #sum grappling_hook.data = #dot grappling_hook.data
+                scoreboard players operation #sum grappling_hook.data += #vsq grappling_hook.data
+                scoreboard players operation #sum grappling_hook.data *= #SCALE grappling_hook.data
+                scoreboard players operation #sum grappling_hook.data /= @n[tag=grappling_hook.arrow.me] grappling_hook.block_range
+
+                # correction = (tension/m) * r / L, axe par axe
+                scoreboard players operation #cx grappling_hook.data = #sum grappling_hook.data
+                scoreboard players operation #cx grappling_hook.data *= @s bs.pos.x
+                scoreboard players operation #cx grappling_hook.data /= @n[tag=grappling_hook.arrow.me] grappling_hook.block_range
+
+                scoreboard players operation #cy grappling_hook.data = #sum grappling_hook.data
+                scoreboard players operation #cy grappling_hook.data *= @s bs.pos.y
+                scoreboard players operation #cy grappling_hook.data /= @n[tag=grappling_hook.arrow.me] grappling_hook.block_range
+
+                scoreboard players operation #cz grappling_hook.data = #sum grappling_hook.data
+                scoreboard players operation #cz grappling_hook.data *= @s bs.pos.z
+                scoreboard players operation #cz grappling_hook.data /= @n[tag=grappling_hook.arrow.me] grappling_hook.block_range
+
+                # Vitesse finale = v_free - correction
+                scoreboard players operation @s grappling_hook.speed.x = #fvx grappling_hook.data
+                scoreboard players operation @s grappling_hook.speed.x -= #cx grappling_hook.data
+
+                scoreboard players operation @s grappling_hook.speed.y = #fvy grappling_hook.data
+                scoreboard players operation @s grappling_hook.speed.y -= #cy grappling_hook.data
+
+                scoreboard players operation @s grappling_hook.speed.z = #fvz grappling_hook.data
+                scoreboard players operation @s grappling_hook.speed.z -= #cz grappling_hook.data
+
+
+
+                scoreboard players operation @s bs.vel.x = @s grappling_hook.speed.x
+                scoreboard players operation @s bs.vel.y = @s grappling_hook.speed.y
+                scoreboard players operation @s bs.vel.z = @s grappling_hook.speed.z
                 function #bs.move:apply_vel {scale:0.001,with:{on_collision:"function #bs.move:callback/slide"}}
 
 
