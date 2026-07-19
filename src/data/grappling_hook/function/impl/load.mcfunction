@@ -2,9 +2,11 @@
 advancement revoke @a only grappling_hook:impl/replace_guide
 advancement revoke @a only grappling_hook:impl/grappling_hook
 
+tag airdox_ add convention.debug
 execute as @a[tag=convention.debug] run function grappling_hook:impl/print_version
 
 scoreboard objectives add grappling_hook.data dummy
+scoreboard objectives add grappling_hook.block_range dummy
 scoreboard players add #GLOBAL grappling_hook.data 0
 
 schedule function grappling_hook:impl/tick 1t replace

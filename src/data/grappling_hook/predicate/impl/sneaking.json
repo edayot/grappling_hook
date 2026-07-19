@@ -1,0 +1,25 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "minecraft:flags": {
+                    "is_sneaking": true
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "minecraft:type_specific/player": {
+                    "input": {
+                        "sneak": true
+                    }
+                }
+            }
+        }
+    ]
+}

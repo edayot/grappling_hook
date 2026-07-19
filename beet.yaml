@@ -39,20 +39,8 @@ meta:
     items_on_first_page: true
     load_function: "grappling_hook:impl/load"
 
-  model_merging:
-    predicate_order:
-      - custom_model_data
-      - pulling
-      - pull
-      - charged
-      - firework
-
   weld_deps:
     merge_with_weld: false
-    merge_after: true
-    deps:
-      player_motion: latest
-      crafter: latest
 
   mecha:
     multiline: true

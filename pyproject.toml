@@ -19,6 +19,10 @@ dev = [
     "python-semantic-release>=10.5.0",
 ]
 
+[tool.uv.sources]
+simple-item-plugin = { path = "../simple_item_plugin", editable = true }
+weld-deps = { path = "../weld-deps", editable = true }
+
 [tool.uv]
 package = false
 
