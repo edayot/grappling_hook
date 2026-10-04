@@ -9,7 +9,6 @@ scoreboard objectives add grappling_hook.data dummy
 scoreboard objectives add grappling_hook.speed.x dummy
 scoreboard objectives add grappling_hook.speed.y dummy
 scoreboard objectives add grappling_hook.speed.z dummy
-scoreboard objectives add grappling_hook.block_range dummy
 scoreboard players add #GLOBAL grappling_hook.data 0
 
 schedule function grappling_hook:impl/tick 1t replace

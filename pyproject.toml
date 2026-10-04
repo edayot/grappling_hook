@@ -12,6 +12,7 @@ dependencies = [
     "smithed>=0.19.0",
     "bolt>=0.50.0b5",
     "mecha>=0.102.0b2",
+    "bolt-compute>=0.0.3",
 ]
 
 [dependency-groups]
@@ -22,6 +23,7 @@ dev = [
 [tool.uv.sources]
 simple-item-plugin = { path = "../simple_item_plugin", editable = true }
 weld-deps = { path = "../weld-deps", editable = true }
+bolt_compute = { path = "../bolt-compute", editable = true }
 
 [tool.uv]
 package = false
