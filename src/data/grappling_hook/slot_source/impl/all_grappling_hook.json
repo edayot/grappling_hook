@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:filtered",
+    "slot_source": "grappling_hook:impl/all",
+    "item_filter": {
+        "predicates": {
+            "minecraft:custom_data": {
+                "grappling_hook": true
+            }
+        }
+    }
+}

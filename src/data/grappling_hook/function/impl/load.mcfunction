@@ -10,6 +10,7 @@ scoreboard objectives add grappling_hook.speed.x dummy
 scoreboard objectives add grappling_hook.speed.y dummy
 scoreboard objectives add grappling_hook.speed.z dummy
 scoreboard players add #GLOBAL grappling_hook.data 0
+scoreboard objectives add grappling_hook.fall_time dummy
 
 schedule function grappling_hook:impl/tick 1t replace
 schedule function grappling_hook:impl/5tick 5t replace
@@ -17,3 +18,5 @@ schedule function grappling_hook:impl/5tick 5t replace
 
 major, minor, patch = ctx.project_version.split('.')
 data modify storage grappling_hook:main version set value {"major": int(major), "minor": int(minor), "patch": int(patch)}
+
+

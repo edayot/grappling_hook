@@ -8,6 +8,22 @@ tag @s remove grappling_hook.rope_attached
 scoreboard players add #GLOBAL grappling_hook.data 1
 scoreboard players operation @s grappling_hook.data = #GLOBAL grappling_hook.data
 
+item modify entity @s grappling_hook:impl/all_grappling_hook {
+    "type": "minecraft:sequence",
+    "functions": [
+        {
+            "type": "minecraft:set_item",
+            "item": "minecraft:poisonous_potato"
+        },
+        {
+            "type": "minecraft:set_components",
+            "components": {
+                "!minecraft:consumable": {}
+            }
+        }
+    ]
+}
+
 execute as @e[type=arrow, distance=..5, tag=!grappling_hook.arrow.already] run function ~/test_origin:
     tag @s add grappling_hook.arrow.already
     scoreboard players set #temp grappling_hook.data 0

@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:group",
+    "terms": [
+        {
+            "type": "minecraft:slot_range",
+            "slots": "container.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "hotbar.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "inventory.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "enderchest.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "horse.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "weapon.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "armor.*"
+        },
+        {
+            "type": "minecraft:slot_range",
+            "slots": "player.crafting.*"
+        }
+    ]
+}
